@@ -9,7 +9,7 @@ export default function AllotmentPage ({
   return (
     <>
       <Container>
-        <ReactMarkdown source={content} />
+        <ReactMarkdown className="text-left" source={content} />
       </Container>
       {instagram &&
         <Feed username={instagram} />
