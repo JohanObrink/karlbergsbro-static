@@ -1,6 +1,4 @@
-const withMDX = require('@next/mdx')({ extension: /\.mdx?$/ })
-
-module.exports = withMDX({
+module.exports = {
   webpack: function(config) {
     config.module.rules.push({
       test: /\.md$/,
@@ -8,4 +6,4 @@ module.exports = withMDX({
     })
     return config
   }
-})
+}
