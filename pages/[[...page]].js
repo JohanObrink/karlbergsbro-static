@@ -6,6 +6,7 @@ import AllotmentListPage from '../components/AllotmentListPage'
 import AllotmentPage from '../components/AllotmentPage'
 import DefaultPage from '../components/DefaultPage'
 import StartPage from '../components/StartPage'
+import Footer from '../components/Footer'
 
 const render = (page) => {
   switch ((page.type || '').toLowerCase()) {
@@ -27,7 +28,10 @@ export default function Page ({menu, pageData}) {
         <title>{pageData.title}</title>
       </Head>
       <Menu menu={menu} />
-      {render(pageData)}
+      <main>
+        {render(pageData)}
+      </main>
+      <Footer />
     </>
   )
 }
