@@ -46,6 +46,11 @@
   align-self: center;
 }
 
+.container img[src*="#left"] {
+  width:50%;
+  float: left;
+}
+
 .instaFeed {
   margin: 40px 0;
 }

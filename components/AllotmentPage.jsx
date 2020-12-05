@@ -1,10 +1,17 @@
 import ReactMarkdown from "react-markdown";
 
-export default function AllotmentPage ({content}) {
+export default function AllotmentPage ({
+  content,
+  instagram
+}) {
   return (
     <>
-      Allotment
-      <ReactMarkdown source={content} />
+      <Container>
+        <ReactMarkdown source={content} />
+      </Container>
+      {instagram &&
+        <Feed username={instagram} />
+      }
     </>
   )
 }
