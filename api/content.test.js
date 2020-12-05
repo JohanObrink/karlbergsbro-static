@@ -8,7 +8,7 @@ describe('api/content', () => {
     })
     it('loads directories', () => {
       const paths = getPaths()
-      expect(paths[1].path).toEqual('/lotter/')
+      expect(paths[1].path).toEqual('/lotter')
     })
     it('loads directories children', () => {
       const paths = getPaths()

@@ -3,7 +3,7 @@ const { join, parse } = require('path')
 const { read } = require('gray-matter')
 const memoize = require('fast-memoize')
 
-const getPaths = memoize((dirs = ['']) => {
+const getPaths = memoize((dirs = []) => {
   const path = join(process.cwd(), 'content', dirs.join('/'))
   const list = readdirSync(path, {withFileTypes: true})
 
@@ -17,9 +17,12 @@ const getPaths = memoize((dirs = ['']) => {
       
       const {content, data} = read(filepath)
 
-      const name = filename.name !== 'index' ? filename.name : ''
+      const slugs = ['', ...dirs]
+      if (filename.name !== 'index') {
+        slugs.push(filename.name)
+      }
       paths.push({
-        path: [...dirs, name].join('/'),
+        path: slugs.join('/') || '/',
         content,
         ...data
       })
