@@ -40,8 +40,8 @@
 }
 
 .container img {
-  max-width: 95%;
-  margin: 20px;
+  max-width: calc(100% - 80px);
+  margin: 20px 40px;
   border-radius: 10px;
   align-self: center;
 }

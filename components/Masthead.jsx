@@ -6,6 +6,7 @@ export default function Masthead ({ children, image }) {
     <>
       <style jsx>{`
         .masthead {
+          width: calc(100vw);
           height: 200px;
           background-size: cover;
           background-position: center;
