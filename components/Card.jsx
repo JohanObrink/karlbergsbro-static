@@ -1,3 +1,5 @@
+import { Image } from "react-bootstrap";
+
 export function Card ({ image, title, text, imageText }) {
   return (
     <div className="card text-left">
@@ -23,7 +25,7 @@ export function Card ({ image, title, text, imageText }) {
       `}</style>
       {image &&
         <div className="imageWrap">
-          <img src={image} className="card-img-top" alt="..." />
+          <Image src={image} rounded fluid />
           {imageText && <div className="imageText">{imageText}</div>}
         </div>
       }
