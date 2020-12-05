@@ -2,9 +2,10 @@
 name: Lott H
 type: Allotment
 
-title: Lottebo
-image: https://res.cloudinary.com/karlbergsbro/image/upload/v1601926905/karlbergsbro/5f7b76f7f1b50f81927034fb.jpg
+title: Lott H
 ---
-# Lottebo
+# Lott H
 
-Hej
+![Lott H](/lotter/lotth.jpg#left)
+
+Här är Lottebo. 
