@@ -21,6 +21,8 @@ export function Card ({ image, title, text, imageText }) {
           height: 75px;
           overflow: hidden;
           text-overflow: ellipsis;
+          color: #333;
+          text-decoration: none;
         }
       `}</style>
       {image &&
