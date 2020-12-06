@@ -19,7 +19,7 @@
     "react-bootstrap": "1.4.0",
     "react-dom": "17.0.1",
     "react-markdown": "5.0.3",
-    "remark-gfm": "^1.0.0"
+    "remark-gfm": "1.0.0"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.12.1",
