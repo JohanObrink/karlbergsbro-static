@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { getPath, getPaths } from '../api/content'
+import { getPath, getPaths, getTree } from '../api/content'
 import Menu from '../components/Menu'
 import AllotmentListPage from '../components/AllotmentListPage'
 import AllotmentPage from '../components/AllotmentPage'
@@ -38,7 +38,8 @@ export default function Page ({menu, pageData}) {
 
 export const getStaticProps = async (context) => {
   const { page = [] } = context.params
-  const menu = getPaths().map(({path, name}) => ({path, name}))
+  const menu = getTree().children
+    .map(({path, name}) => ({path, name}))
   const pageData = getPath(page)
   return {props: {menu, pageData}}
 }

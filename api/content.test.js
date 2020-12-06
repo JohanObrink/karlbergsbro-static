@@ -20,4 +20,24 @@ describe('api/content', () => {
       expect(paths[0].content).toEqual(expect.any(String))
     })
   })
+  describe('#getTree', () => {
+    it('returns one top element', () => {
+      const tree = getTree()
+      expect(tree).toEqual({
+        path: '/',
+        name: expect.any(String),
+        type: expect.any(String),
+        title: expect.any(String),
+        image: expect.any(String),
+        headline: expect.any(String),
+        instagram: expect.any(String),
+        content: expect.any(String),
+        children: expect.any(Array),
+      })
+    })
+    it('parses children', () => {
+      const tree = getTree()
+      expect(tree.children).toHaveLength(2)
+    })
+  })
 })

@@ -38,4 +38,38 @@ const getPath = memoize((slugs = []) => {
   return paths.find(p => p.path === url || p.path === url + '/')
 })
 
-module.exports = { getPaths, getPath }
+const getTree = memoize((path = '') => {
+  const fullPath = join(process.cwd(), 'content', path)
+  let result = {
+    path: join('/', path),
+    children: []
+  }
+  const list = readdirSync(fullPath, {withFileTypes: true})
+  for (dirent of list) {
+    if (dirent.isDirectory()) {
+      result.children.push(getTree(join(path, dirent.name)))
+    } else {
+      const filename = parse(dirent.name)
+      const filepath = join(fullPath, dirent.name)
+      
+      const {content, data} = read(filepath)
+
+      if (filename.name !== 'index') {
+        result.children.push({
+          ...data,
+          path: join('/', path, filename.name),
+          content
+        })
+      } else {
+        result = {
+          ...result,
+          ...data,
+          content
+        }
+      }
+    }
+  }
+  return result
+})
+
+module.exports = { getPaths, getPath, getTree }
