@@ -1,6 +1,7 @@
 ---
 name: Lott 2
 type: Allotment
+thumbnail: /lotter/lott2-thumbnail.jpg
 
 title: Lott 2
 ---

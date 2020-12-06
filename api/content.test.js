@@ -1,4 +1,9 @@
-const { getPaths, getTree } = require('./content')
+const {
+  getPaths,
+  getTree,
+  getMenu,
+  findNode,
+} = require('./content')
 
 describe('api/content', () => {
   describe('#getPaths', () => {
@@ -38,6 +43,48 @@ describe('api/content', () => {
     it('parses children', () => {
       const tree = getTree()
       expect(tree.children).toHaveLength(2)
+    })
+  })
+  describe('#getMenu', () => {
+    it('returns one top element with name and path', () => {
+      const menu = getMenu()
+      expect(menu).toEqual({
+        path: '/',
+        name: expect.any(String),
+        thumbnail: null,
+        children: expect.any(Array),
+      })
+    })
+    it('parses children', () => {
+      const menu = getMenu()
+      expect(menu.children).toHaveLength(2)
+      expect(menu.children[0]).toEqual({
+        path: '/lotter',
+        name: expect.any(String),
+        thumbnail: null,
+        children: expect.any(Array),
+      })
+    })
+  })
+  describe('#findNode', () => {
+    let menu
+    beforeEach(() => {
+      menu = {
+        path: '/',
+        name: 'Hem',
+        children: [
+          { path: '/lotter', name: 'Lotter', children: [] },
+          { path: '/om-oss', name: 'Om oss', children: [] }
+        ]
+      }
+    })
+    it('returns the correct node', () => {
+      const node = findNode(menu, '/lotter')
+      expect(node).toEqual(menu.children[0])
+    })
+    it('returns undefined if node does not exist', () => {
+      const node = findNode(menu, '/foo')
+      expect(node).toBe(undefined)
     })
   })
 })
