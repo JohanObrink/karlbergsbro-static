@@ -1,6 +1,7 @@
 ---
 name: Lott H
 type: Allotment
+thumbnail: /lotter/lotth-thumbnail.jpg
 
 title: Lott H
 

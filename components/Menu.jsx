@@ -1,9 +1,7 @@
-import Link from 'next/link'
 import { Nav } from 'react-bootstrap'
 import {usePath} from 'hookrouter'
 
-export default function Menu ({menu}) {
-  const path = usePath()
+export default function Menu ({menu, path}) {
   return (
     <header className="text-center px-5 py-4">
       <div>

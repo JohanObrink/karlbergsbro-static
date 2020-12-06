@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { getPath, getPaths, getTree } from '../api/content'
+import { getPath, getPaths, getTree, getMenu, findNode } from '../api/content'
 import Menu from '../components/Menu'
 import AllotmentListPage from '../components/AllotmentListPage'
 import AllotmentPage from '../components/AllotmentPage'
@@ -8,40 +8,41 @@ import DefaultPage from '../components/DefaultPage'
 import StartPage from '../components/StartPage'
 import Footer from '../components/Footer'
 
-const render = (page) => {
+const render = (menu, node, page) => {
   switch ((page.type || '').toLowerCase()) {
     case 'allotmentlist':
-      return <AllotmentListPage {...page} />
+      return <AllotmentListPage menu={menu} node={node} {...page} />
     case 'allotment':
-      return <AllotmentPage {...page} />
+      return <AllotmentPage menu={menu} node={node} {...page} />
     case 'start':
-      return <StartPage {...page} />
+      return <StartPage menu={menu} node={node} {...page} />
     default:
-      return <DefaultPage {...page} />
+      return <DefaultPage menu={menu} node={node} {...page} />
   }
 }
 
-export default function Page ({menu, pageData}) {
+export default function Page ({menu, node, pageData}) {
   return (
-    <>
+    <div className="d-flex w-100 h-100 mx-auto flex-column">
       <Head>
         <title>{pageData.title}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Menu menu={menu} />
+      <Menu menu={menu.children} path={pageData.path} />
       <main>
-        {render(pageData)}
+        {render(menu, node, pageData)}
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 
 export const getStaticProps = async (context) => {
   const { page = [] } = context.params
-  const menu = getTree().children
-    .map(({path, name}) => ({path, name}))
+  const menu = getMenu(getTree())
   const pageData = getPath(page)
-  return {props: {menu, pageData}}
+  const node = findNode(menu, pageData.path)
+  return {props: {menu, pageData, node}}
 }
 
 export const getStaticPaths = async () => {

@@ -72,4 +72,33 @@ const getTree = memoize((path = '') => {
   return result
 })
 
-module.exports = { getPaths, getPath, getTree }
+const getMenu = memoize((node) => {
+  if (!node) {
+    node = getTree()
+  }
+  return {
+    path: node.path,
+    name: node.name,
+    thumbnail: node.thumbnail || null,
+    children: (node.children || []).map(child => getMenu(child))
+  }
+})
+
+const findNode = memoize((node, path) => {
+  if (node.path === path) return node
+
+  for (let child of node.children || []) {
+    if (path.indexOf(child.path) === 0) {
+      const match = findNode(child, path)
+      if (match) return match
+    }
+  }
+})
+
+module.exports = {
+  getPaths,
+  getPath,
+  getTree,
+  getMenu,
+  findNode,
+}
