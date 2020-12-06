@@ -229,20 +229,11 @@ Projektet ”Full Scale Studio” inom Arkitektskolan på KTH startade hösten 2
 
 Stugorna har som nämnts haft olika teman. I korthet har några av dem varit följande:
 * Klimat och energi. Att minimera energikonsumtion och ekologiskt fotavtryck.
-* Produktion och ekonomi. Genom begränsad byggtid kan mycket sparas och
-kostnader hållas nere, väl avvägda val då extra viktiga.
-* Lång livslängd. Val av fasad i metall istället för trä och en form på huset som gör att
-vatten av regn och kondens lätt rinner av.
-* Kombination av olika ytor, inre slutna och öppna ”patios”. Därvid också använda de
-förhållandevis generösa reglerna för byggande av pergola.
-* Skapande av stuga med förhållandevis stor yta genom användande av burspråk.
-Enkelt material i yttre fasaden som kan verka som en kontrast till konstruktionen i
-trä, en ”kall” utsida” och en ”varm” insida. Olika delar av det som byggs är länkade till
-varandra, ”the stacking house”.
-* Stuga med takfönster och speciell anpassning till markens lutning vilket gör att den
-tycks flyta något ovanför marknivån. Ges därigenom lite karaktär av ett fyrtorn vid
-havet. När det är mörkt utomhus sänder takfönstret ut ljuset inifrån och tar in ljus
-när det är ljust utomhus.
+* Produktion och ekonomi. Genom begränsad byggtid kan mycket sparas och kostnader hållas nere, väl avvägda val då extra viktiga.
+* Lång livslängd. Val av fasad i metall istället för trä och en form på huset som gör att vatten av regn och kondens lätt rinner av.
+* Kombination av olika ytor, inre slutna och öppna ”patios”. Därvid också använda de förhållandevis generösa reglerna för byggande av pergola.
+* Skapande av stuga med förhållandevis stor yta genom användande av burspråk. Enkelt material i yttre fasaden som kan verka som en kontrast till konstruktionen i trä, en ”kall” utsida” och en ”varm” insida. Olika delar av det som byggs är länkade till varandra, ”the stacking house”.
+* Stuga med takfönster och speciell anpassning till markens lutning vilket gör att den tycks flyta något ovanför marknivån. Ges därigenom lite karaktär av ett fyrtorn vid havet. När det är mörkt utomhus sänder takfönstret ut ljuset inifrån och tar in ljus när det är ljust utomhus.
 
 ### Några minnesår i föreningens historia
 
@@ -263,7 +254,6 @@ när det är ljust utomhus.
 | 2010  | Föreningen fick 25-årigt arrendeavtal med Stockholms stad gällande från 2010-10-01.  |
 | 2015  | Utökning av koloniområdet med 8 nya lotter.  |
 | 2017  | Nya stadgar antogs. |
-|   |   |
 
 
 ### Bildförteckning

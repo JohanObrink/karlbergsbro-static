@@ -1,6 +1,6 @@
-import { Container } from "react-bootstrap";
-import ReactMarkdown from "react-markdown";
+import { Container } from "react-bootstrap"
 import Feed from "./instagram/Feed";
+import Markdown from "./Markdown";
 import Masthead from "./Masthead"
 
 export default function StartPage ({
@@ -15,7 +15,7 @@ export default function StartPage ({
         <h1>{headline}</h1>
       </Masthead>
       <Container>
-        <ReactMarkdown source={content} />
+      <Markdown>{content}</Markdown>
       </Container>
       {instagram &&
         <Feed username={instagram} />
