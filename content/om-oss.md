@@ -193,7 +193,7 @@ Ett av de äldsta foton vi har är från år 1911. Den som sitter i mitten med e
 Genomgång av gamla kontrakt, årsmötesprotokoll och kassaböcker, samt intervjuer med
 gamla kolonister, gör att vi vet namnen på alla vuxna på bilden utom på mannen längst till vänster och mannen näst längst till höger. Barnens namn saknas vi också uppgift om. Kanske kan någon läsare hjälpa oss med dessa uppgifter!
 
-![Kolonister samlade framför tält år 1911](/om-oss/kolinister.jpg)
+![Kolonister samlade framför tält år 1911](/om-oss/kolonister.jpg)
 *Kolonister samlade framför tält år 1911*
 
 Gamla kolonister har berättat hur en del av stugorna kom till. Rune Lindblom, som körde taxi i Stockholm, berättade till exempel att han och hans fru Astrid byggde stugan på lott nr 11 av brädor från lårar som man fick från olika byggen.
