@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap"
-import ReactMarkdown from "react-markdown"
 import Link from 'next/link'
 import { Card } from "./Card"
+import Markdown from "./Markdown"
 
 export default function AllotmentListPage ({
   content,
@@ -11,7 +11,7 @@ export default function AllotmentListPage ({
   return (
     <>
       <Container>
-        <ReactMarkdown className="text-left" source={content} />
+        <Markdown>{content}</Markdown>
         <Row>
           {node.children.map((allotment) => (
             <Col

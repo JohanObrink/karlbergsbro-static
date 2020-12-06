@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
-import ReactMarkdown from "react-markdown";
 import Feed from "./instagram/Feed";
+import Markdown from "./Markdown";
 
 export default function AllotmentPage ({
   content,
@@ -9,7 +9,7 @@ export default function AllotmentPage ({
   return (
     <>
       <Container>
-        <ReactMarkdown className="text-left" source={content} />
+        <Markdown>{content}</Markdown>
       </Container>
       {instagram &&
         <Feed username={instagram} />

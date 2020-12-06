@@ -1,7 +1,7 @@
-import { Col, Container, Row } from "react-bootstrap";
-import ReactMarkdown from "react-markdown";
-import Feed from "./instagram/Feed";
-import Masthead from "./Masthead";
+import { Col, Container, Row } from "react-bootstrap"
+import Feed from "./instagram/Feed"
+import Markdown from "./Markdown"
+import Masthead from "./Masthead"
 
 export default function DefaultPage ({
   content,
@@ -18,8 +18,8 @@ export default function DefaultPage ({
       </Masthead>
       <Container>
         <Row>
-          <Col className="text-left">
-            <ReactMarkdown source={content} />
+          <Col>
+            <Markdown>{content}</Markdown>
           </Col>
         </Row>
       </Container>
