@@ -259,7 +259,7 @@ Det stora huset har med sitt läge alldeles invid Karlbergskanalen gett inspirat
 författare. Här vid Mariedal utspelas den dramatiska handlingen i Stieg Trenters mycket
 läsvärda deckare ”Eld i håg” som utkom 1949.
 
-###Något om livet förr i koloniområdet
+### Något om livet förr i koloniområdet
 Hur levde man då i vårt koloniområde? Gamla kolonister har berättat att man flyttade ut till
 kolonin i maj månad och att man sedan bodde där hela sommaren och en bit in på hösten.
 Att kolonisterna umgicks mycket med varandra, och att man också hjälpte varandra med
@@ -317,7 +317,7 @@ eftersom lotten sträckte sig ända ner till kanalen.
 ![En av de första kolonisterna, John Torstensson, på besök i koloniföreningen år 1930](/om-oss/john-thorstensson.jpg)
 *En av de första kolonisterna, John Torstensson, på besök i koloniföreningen år 1930*
 
-###Utökning av koloniområdet med nya lotter och stugor
+### Utökning av koloniområdet med nya lotter och stugor
 Som har beskrivits i det inledande avsnittet i historiken har det på västra Kungsholmen förr
 funnits många olika koloniföreningar och ett mycket stort antal kolonilotter. På 1920-talet
 när det var som mest fanns i denna del av Stockholm nästan 1 000 kolonilotter fördelade på
