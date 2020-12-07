@@ -126,8 +126,30 @@
   }
 }
 
+.masthead {
+  width: calc(100vw);
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+
+form {
+  margin-bottom: 50px;
+}
+
+@media (min-width: 600px) {
+  .masthead {
+    height: 300px;
+  }
+}
+
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
+  }
+  .masthead {
+    height: 500px;
   }
 }

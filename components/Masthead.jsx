@@ -4,26 +4,6 @@ export default function Masthead ({ children, image }) {
   } : {}
   return (
     <>
-      <style jsx>{`
-        .masthead {
-          width: calc(100vw);
-          height: 200px;
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          margin-bottom: 20px;
-        }
-        @media (min-width: 600px) {
-          .masthead {
-            height: 300px;
-          }
-        }
-        @media (min-width: 768px) {
-          .masthead {
-            height: 500px;
-          }
-        }
-      `}</style>
       <div
         className="masthead text-white"
         style={style}>
