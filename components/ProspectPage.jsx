@@ -19,6 +19,7 @@ export default function DefaultPage ({
 
   const submitForm = async () => {
     setSubmitting(true)
+    setError('')
     try {
       const response = await fetch('/api/prospects', {
         method: 'POST',
@@ -52,7 +53,7 @@ export default function DefaultPage ({
 
   const handleChange = ({target}) => {
     setData({ ...data, [target.name]: target.value})
-    setError(false)
+    setError('')
   }
 
   return (

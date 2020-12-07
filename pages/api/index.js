@@ -1,4 +1,4 @@
-import { getTree } from '../../api/content'
+import { getTree } from '../../services/content'
 
 export default function handler (req, res) {
   try {

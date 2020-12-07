@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { getPath, getPaths, getTree, getMenu, findNode } from '../api/content'
+import { getPath, getPaths, getTree, getMenu, findNode } from '../services/content'
 
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
