@@ -20,14 +20,20 @@ export default function DefaultPage ({
   const submitForm = async () => {
     setSubmitting(true)
     try {
-      await fetch('/api/prospects', {
+      const response = await fetch('/api/prospects', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       })
+      if (response.status >= 400) {
+        const error = await response.json()
+        console.log(error)
+        throw error
+      }
       setSubmitted(true)
     } catch (err) {
-      setError(error)
+      setValidated(false)
+      setError(err.message)
     } finally {
       setSubmitting(false)
     }
@@ -59,7 +65,7 @@ export default function DefaultPage ({
           <Alert variant="success">Tack för din ansökan!</Alert>
         }
         {error &&
-          <Alert variant="error">Ett fel inträffade ({error})</Alert>
+          <Alert variant="danger">Ett fel inträffade ({error})</Alert>
         }
         <Row>
           <Col lg={6} md={6} sm={12} xs={12}>
@@ -68,7 +74,6 @@ export default function DefaultPage ({
               <Form.Control
                 disabled={disabled}
                 type="text"
-                placeholder="Namn"
                 name="name"
                 required />
             </Form.Group>
@@ -79,7 +84,6 @@ export default function DefaultPage ({
               <Form.Control
                 disabled={disabled}
                 type="text"
-                placeholder="Födelseår"
                 name="year_of_birth"
                 required />
             </Form.Group>
@@ -90,7 +94,6 @@ export default function DefaultPage ({
               <Form.Control
                 disabled={disabled}
                 type="text"
-                placeholder="Gatuadress"
                 name="address"
                 required />
             </Form.Group>
@@ -101,7 +104,6 @@ export default function DefaultPage ({
               <Form.Control
                 disabled={disabled}
                 type="text"
-                placeholder="Postadress"
                 name="postal_address"
                 required />
             </Form.Group>
@@ -112,7 +114,6 @@ export default function DefaultPage ({
               <Form.Control
                 disabled={disabled}
                 type="email"
-                placeholder="E-postadress"
                 name="email"
                 required />
             </Form.Group>
@@ -123,7 +124,6 @@ export default function DefaultPage ({
               <Form.Control
                 disabled={disabled}
                 type="text"
-                placeholder="Telefonnummer"
                 name="phone"
                 required />
             </Form.Group>
@@ -135,6 +135,7 @@ export default function DefaultPage ({
                 disabled={disabled}
                 type="number"
                 name="number_of_kids"
+                defaultValue={0}
                 min={0} />
             </Form.Group>
           </Col>
@@ -153,7 +154,6 @@ export default function DefaultPage ({
               <Form.Control
                 disabled={disabled}
                 type="text"
-                placeholder="Yrke"
                 name="occupation"
                 required />
             </Form.Group>
@@ -183,7 +183,7 @@ export default function DefaultPage ({
         <Row>
           <Col>
             {error &&
-              <Alert variant="error">Ett fel inträffade ({error})</Alert>
+              <Alert variant="danger">Ett fel inträffade ({error})</Alert>
             }
             {submitted &&
               <Alert variant="success">Tack för din ansökan!</Alert>
