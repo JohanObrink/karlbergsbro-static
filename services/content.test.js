@@ -73,7 +73,7 @@ sort: 1
     })
   })
   describe('#getMenu', () => {
-    it.only('returns one top element with name and path', () => {
+    it('returns one top element with name and path', () => {
       const menu = getMenu()
       expect(menu).toEqual({
         path: '/',
@@ -97,12 +97,17 @@ sort: 1
     it('sorts children based on sort', () => {
       const { children } = getMenu()
       expect(children.map(c => c.path))
-        .toEqual(['/om-oss', '/lotter', '/intresse'])
+        .toEqual(['/om-oss', '/intresse', '/lotter'])
     })
     it('sorts children based on path', () => {
       const { children } = getMenu()
-      expect(children[1].children.map(c => c.path))
-        .toEqual(['/om-oss', '/lotter', '/intresse'])
+      expect(children[2].children.map(c => c.path))
+        .toEqual([
+          '/lotter/lott-1',
+          '/lotter/lott-2',
+          '/lotter/lott-10',
+          '/lotter/lott-h'
+        ])
     })
   })
   describe('#findNode', () => {
