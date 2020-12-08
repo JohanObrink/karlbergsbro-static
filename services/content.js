@@ -78,9 +78,19 @@ export const getMenu = memoize((node) => {
   }
   return {
     path: node.path,
+    sort: parseInt(node.sort, 10) || parseInt(node.path.match(/\d+/), 10) || node.path,
     name: node.name,
     thumbnail: node.thumbnail || null,
-    children: (node.children || []).map(child => getMenu(child))
+    children: (node.children || [])
+      .map(child => getMenu(child))
+      .sort(({sort: s1}, {sort: s2}) => {
+        const isNum1 = typeof s1 === 'number'
+        const isNum2 = typeof s2 === 'number'
+        if (isNum1 && isNum2) return s1 - s2
+        if (isNum1 && !isNum2) return -1
+        if (!isNum2 && isNum1) return 1
+        return s1 < s2 ? -1 : 1
+      })
   }
 })
 

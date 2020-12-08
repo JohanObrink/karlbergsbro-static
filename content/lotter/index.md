@@ -1,5 +1,6 @@
 ---
 name: Lotter
+sort: 2
 type: AllotmentList
 
 title: Lotter
