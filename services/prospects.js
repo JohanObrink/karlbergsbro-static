@@ -1,7 +1,4 @@
-const { MongoClient } = require('mongodb')
-const { sendMail } = require('./mailer')
-
-const url = 'mongodb://localhost:27017'
+import { sendMail } from './mailer'
 
 function compose (form) {
   return (
@@ -29,7 +26,7 @@ ${form.motivation}
   )
 }
 
-async function register (form) {
+export async function register (form) {
   const mail = {
     from: 'Karlbergs-Bro Intresseanmälan',
     subject: 'Intresseanmälan',
@@ -38,8 +35,4 @@ async function register (form) {
     text: compose(form)
   }
   return await sendMail(mail)
-}
-
-module.exports = {
-  register
 }

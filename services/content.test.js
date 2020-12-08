@@ -1,28 +1,57 @@
-const {
+import {
   getPaths,
   getTree,
   getMenu,
   findNode,
-} = require('./content')
+} from './content'
+import mockFs from 'mock-fs'
 
 describe('api/content', () => {
+  beforeEach(() => {
+    const root = `${process.cwd()}/content`
+    mockFs({
+      [root]: {
+        'lotter': {
+          'index.md': `---
+name: Lotter
+---`,
+          'lott-1.md': '',
+          'lott-10.md': '',
+          'lott-2.md': '',
+          'lott-h.md': ''
+        },
+        'index.md': `---
+title: titel
+name: Hem
+---
+# markdown`,
+        'intresse.md': '',
+        'om-oss': ''
+      }
+    })
+  })
+  afterEach(() => mockFs.restore())
   describe('#getPaths', () => {
     it('loads index', () => {
       const paths = getPaths()
       expect(paths[0].path).toEqual('/')
     })
+    it('loads recursively', () => {
+      const paths = getPaths()
+      expect(paths).toHaveLength(8)
+    })
     it('loads directories', () => {
       const paths = getPaths()
-      expect(paths[1].path).toEqual('/lotter')
+      expect(paths[1].path).toEqual('/intresse')
     })
     it('loads directories children', () => {
       const paths = getPaths()
-      expect(paths[2].path).toEqual('/lotter/lott-1')
+      expect(paths[3].path).toEqual('/lotter/lott-1')
     })
     it('loads page data', () => {
       const paths = getPaths()
-      expect(paths[0].title).toEqual(expect.any(String))
-      expect(paths[0].content).toEqual(expect.any(String))
+      expect(paths[0].title).toEqual('titel')
+      expect(paths[0].content).toEqual('# markdown')
     })
   })
   describe('#getTree', () => {
@@ -30,19 +59,15 @@ describe('api/content', () => {
       const tree = getTree()
       expect(tree).toEqual({
         path: '/',
-        name: expect.any(String),
-        type: expect.any(String),
-        title: expect.any(String),
-        image: expect.any(String),
-        headline: expect.any(String),
-        instagram: expect.any(String),
-        content: expect.any(String),
+        title: 'titel',
+        name: 'Hem',
+        content: '# markdown',
         children: expect.any(Array),
       })
     })
     it('parses children', () => {
       const tree = getTree()
-      expect(tree.children).toHaveLength(2)
+      expect(tree.children).toHaveLength(3)
     })
   })
   describe('#getMenu', () => {
@@ -50,17 +75,17 @@ describe('api/content', () => {
       const menu = getMenu()
       expect(menu).toEqual({
         path: '/',
-        name: expect.any(String),
+        name: 'Hem',
         thumbnail: null,
         children: expect.any(Array),
       })
     })
     it('parses children', () => {
       const menu = getMenu()
-      expect(menu.children).toHaveLength(2)
-      expect(menu.children[0]).toEqual({
+      expect(menu.children).toHaveLength(3)
+      expect(menu.children[1]).toEqual({
         path: '/lotter',
-        name: expect.any(String),
+        name: 'Lotter',
         thumbnail: null,
         children: expect.any(Array),
       })
