@@ -2,6 +2,8 @@ import { Nav } from 'react-bootstrap'
 import {usePath} from 'hookrouter'
 
 export default function Menu ({menu, path}) {
+  let mainPath = path.split('/').slice(0,2).join('/')
+
   return (
     <header className="text-center px-5 py-4">
       <div>
@@ -10,7 +12,7 @@ export default function Menu ({menu, path}) {
         </h3>
         <Nav
           className="nav-masthead justify-content-center float-md-right"
-          activeKey={path}>
+          activeKey={mainPath}>
           {menu.map(({path, name}) => (
             <Nav.Item key={path}>
               <Nav.Link href={path}>

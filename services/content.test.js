@@ -26,7 +26,9 @@ name: Hem
 ---
 # markdown`,
         'intresse.md': '',
-        'om-oss': ''
+        'om-oss': `---
+sort: 1
+---`
       }
     })
   })
@@ -71,10 +73,11 @@ name: Hem
     })
   })
   describe('#getMenu', () => {
-    it('returns one top element with name and path', () => {
+    it.only('returns one top element with name and path', () => {
       const menu = getMenu()
       expect(menu).toEqual({
         path: '/',
+        sort: '/',
         name: 'Hem',
         thumbnail: null,
         children: expect.any(Array),
@@ -83,12 +86,23 @@ name: Hem
     it('parses children', () => {
       const menu = getMenu()
       expect(menu.children).toHaveLength(3)
-      expect(menu.children[1]).toEqual({
+      expect(menu.children[2]).toEqual({
         path: '/lotter',
+        sort: '/lotter',
         name: 'Lotter',
         thumbnail: null,
         children: expect.any(Array),
       })
+    })
+    it('sorts children based on sort', () => {
+      const { children } = getMenu()
+      expect(children.map(c => c.path))
+        .toEqual(['/om-oss', '/lotter', '/intresse'])
+    })
+    it('sorts children based on path', () => {
+      const { children } = getMenu()
+      expect(children[1].children.map(c => c.path))
+        .toEqual(['/om-oss', '/lotter', '/intresse'])
     })
   })
   describe('#findNode', () => {

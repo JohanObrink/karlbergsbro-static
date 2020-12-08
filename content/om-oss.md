@@ -1,5 +1,6 @@
 ---
 name: Om oss
+sort: 1
 type: Default
 
 title: Karlbergs-bro koloniförening
