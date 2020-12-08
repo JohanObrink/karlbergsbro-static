@@ -30,7 +30,7 @@ export async function register (form) {
   const mail = {
     from: 'Karlbergs-Bro Intresseanmälan',
     subject: 'Intresseanmälan',
-    to: 'Johan <johan.obrink@gmail.com>',
+    to: process.env.MAILER_TO_PROSPECTS,
     replyTo: `${form.name} <${form.email}>`,
     text: compose(form)
   }
