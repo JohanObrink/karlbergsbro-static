@@ -6,7 +6,7 @@ import {
 } from './content'
 import mockFs from 'mock-fs'
 
-describe('api/content', () => {
+describe('services/content', () => {
   beforeEach(() => {
     const root = `${process.cwd()}/content`
     mockFs({
