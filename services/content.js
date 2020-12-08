@@ -1,14 +1,14 @@
-const { readdirSync } = require('fs')
-const { join, parse } = require('path')
-const { read } = require('gray-matter')
-const memoize = require('fast-memoize')
+import { readdirSync } from 'fs'
+import { join, parse } from 'path'
+import { read } from 'gray-matter'
+import memoize from 'fast-memoize'
 
-const getPaths = memoize((dirs = []) => {
+export const getPaths = memoize((dirs = []) => {
   const path = join(process.cwd(), 'content', dirs.join('/'))
-  const list = readdirSync(path, {withFileTypes: true})
+  const list = readdirSync(path, { withFileTypes: true })
 
   let paths = []
-  for (dirent of list) {
+  for (let dirent of list) {
     if (dirent.isDirectory()) {
       paths = paths.concat(getPaths([...dirs, dirent.name]))
     } else {
@@ -32,20 +32,20 @@ const getPaths = memoize((dirs = []) => {
   return paths
 })
 
-const getPath = memoize((slugs = []) => {
+export const getPath = memoize((slugs = []) => {
   const paths = getPaths()
   const url = ['', ...slugs].join('/')
   return paths.find(p => p.path === url || p.path === url + '/')
 })
 
-const getTree = memoize((path = '') => {
+export const getTree = memoize((path = '') => {
   const fullPath = join(process.cwd(), 'content', path)
   let result = {
     path: join('/', path),
     children: []
   }
   const list = readdirSync(fullPath, {withFileTypes: true})
-  for (dirent of list) {
+  for (let dirent of list) {
     if (dirent.isDirectory()) {
       result.children.push(getTree(join(path, dirent.name)))
     } else {
@@ -72,7 +72,7 @@ const getTree = memoize((path = '') => {
   return result
 })
 
-const getMenu = memoize((node) => {
+export const getMenu = memoize((node) => {
   if (!node) {
     node = getTree()
   }
@@ -84,7 +84,7 @@ const getMenu = memoize((node) => {
   }
 })
 
-const findNode = memoize((node, path) => {
+export const findNode = memoize((node, path) => {
   if (node.path === path) return node
 
   for (let child of node.children || []) {
@@ -94,11 +94,3 @@ const findNode = memoize((node, path) => {
     }
   }
 })
-
-module.exports = {
-  getPaths,
-  getPath,
-  getTree,
-  getMenu,
-  findNode,
-}

@@ -1,12 +1,15 @@
 import React from 'react'
 import Head from 'next/head'
-import { getPath, getPaths, getTree, getMenu, findNode } from '../api/content'
+import { getPath, getPaths, getTree, getMenu, findNode } from '../services/content'
+
 import Menu from '../components/Menu'
+import Footer from '../components/Footer'
+
 import AllotmentListPage from '../components/AllotmentListPage'
 import AllotmentPage from '../components/AllotmentPage'
 import DefaultPage from '../components/DefaultPage'
 import StartPage from '../components/StartPage'
-import Footer from '../components/Footer'
+import ProspectPage from '../components/ProspectPage'
 
 const render = (menu, node, page) => {
   switch ((page.type || '').toLowerCase()) {
@@ -14,6 +17,8 @@ const render = (menu, node, page) => {
       return <AllotmentListPage menu={menu} node={node} {...page} />
     case 'allotment':
       return <AllotmentPage menu={menu} node={node} {...page} />
+    case 'prospect':
+      return <ProspectPage menu={menu} node={node} {...page} />
     case 'start':
       return <StartPage menu={menu} node={node} {...page} />
     default:
