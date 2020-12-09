@@ -1,21 +1,55 @@
 .markdown {
+  // small
   img {
-    max-width: calc(100% - 80px);
-    margin: 20px 40px;
-    border-radius: 10px;
+    width: 100%;
+    margin: 0;
     align-self: center;
   }
   img[src*="#left"] {
-    width:50%;
-    float: left;
-    margin: 20px 40px 40px 0;
-    border-radius: 10px;
+    width: 100%;
+    margin: 10px 0;
   }
   img[src*="#right"] {
-    max-width:30%;
-    float: right;
-    margin: 10px 0 20px 30px;
-    border-radius: 5px;
+    max-width:100%;
+    margin: 10px 0;
+  }
+
+  // medium
+  @media (min-width: 660px) {
+    img {
+      max-width: calc(100% - 80px);
+      margin: 20px 40px;
+      align-self: center;
+    }
+    img[src*="#left"] {
+      width:50%;
+      float: left;
+      margin: 10px 40px 40px 0;
+    }
+    img[src*="#right"] {
+      width:40%;
+      float: right;
+      margin: 10px 0 20px 30px;
+    }
+  }
+
+  // large
+  @media (min-width: 1000px) {
+    img {
+      max-width: calc(100% - 80px);
+      margin: 20px 40px;
+      align-self: center;
+    }
+    img[src*="#left"] {
+      width:50%;
+      float: left;
+      margin: 10px 40px 40px 0;
+    }
+    img[src*="#right"] {
+      max-width:30%;
+      float: right;
+      margin: 10px 0 20px 30px;
+    }
   }
 
   table {

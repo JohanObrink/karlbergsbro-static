@@ -5,9 +5,9 @@ thumbnail: /lotter/lott2-thumbnail.jpg
 
 title: Lott 2
 ---
-# Lott 2
-
 ![Lott 2](/lotter/lott2.jpg#left)
+
+# Lott 2
 
 Här bor Marie och Torsten Avén sedan 2004.
 
