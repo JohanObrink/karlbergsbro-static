@@ -1,9 +1,9 @@
 ---
-name: Om oss
+name: Historik
 sort: 1
 type: Default
 
-title: Karlbergs-bro koloniförening
+title: Historik
 
 image: /om-oss/flygfoto.jpg
 headline: Koloniföreningen Karlbergs-Bro 100 år
