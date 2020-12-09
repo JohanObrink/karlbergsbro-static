@@ -1,0 +1,49 @@
+.insta-feed {
+  margin: 40px 0;
+  clear: both;
+
+  h6 {
+    margin-top: 10px;
+  }
+  .text {
+    font-size: 0.8em;
+    height: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.card {
+  margin-bottom: 10px;
+
+  .card-image {
+    width: calc(100% - 10px);
+    max-width: none;
+    margin: 5px;
+  }
+  .card-image-wrap {
+    position: relative;
+    width: 100%;
+  }
+  .card-image-text {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    color: #fff;
+  }
+  .card-title {
+    color: #333;
+    text-decoration: none;
+  }
+  .card-text {
+    font-size: 0.8em;
+    height: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #333;
+    text-decoration: none;
+  }
+}

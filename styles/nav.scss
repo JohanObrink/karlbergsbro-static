@@ -1,0 +1,38 @@
+.nav-brand .nav-link {
+  padding: .25rem 0;
+  font-weight: 200;
+  color: rgba(0, 0, 0, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-brand .nav-link:hover,
+.nav-brand .nav-link:focus {
+  border-bottom-color: rgba(0, 0, 0, .25);
+}
+
+.nav-brand .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 200;
+  color: rgba(0, 0, 0, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(0, 0, 0, .25);
+}
+
+.nav-masthead .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #000;
+  border-bottom-color: #000;
+}
