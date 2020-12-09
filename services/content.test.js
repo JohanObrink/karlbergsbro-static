@@ -1,24 +1,19 @@
-import {
-  getPaths,
-  getTree,
-  getMenu,
-  findNode,
-} from './content'
 import mockFs from 'mock-fs'
+import { getPaths, getTree, getMenu, findNode } from './content'
 
 describe('services/content', () => {
   beforeEach(() => {
     const root = `${process.cwd()}/content`
     mockFs({
       [root]: {
-        'lotter': {
+        lotter: {
           'index.md': `---
 name: Lotter
 ---`,
           'lott-1.md': '',
           'lott-10.md': '',
           'lott-2.md': '',
-          'lott-h.md': ''
+          'lott-h.md': '',
         },
         'index.md': `---
 title: titel
@@ -28,8 +23,8 @@ name: Hem
         'intresse.md': '',
         'om-oss': `---
 sort: 1
----`
-      }
+---`,
+      },
     })
   })
   afterEach(() => mockFs.restore())
@@ -96,18 +91,20 @@ sort: 1
     })
     it('sorts children based on sort', () => {
       const { children } = getMenu()
-      expect(children.map(c => c.path))
-        .toEqual(['/om-oss', '/intresse', '/lotter'])
+      expect(children.map((c) => c.path)).toEqual([
+        '/om-oss',
+        '/intresse',
+        '/lotter',
+      ])
     })
     it('sorts children based on path', () => {
       const { children } = getMenu()
-      expect(children[2].children.map(c => c.path))
-        .toEqual([
-          '/lotter/lott-1',
-          '/lotter/lott-2',
-          '/lotter/lott-10',
-          '/lotter/lott-h'
-        ])
+      expect(children[2].children.map((c) => c.path)).toEqual([
+        '/lotter/lott-1',
+        '/lotter/lott-2',
+        '/lotter/lott-10',
+        '/lotter/lott-h',
+      ])
     })
   })
   describe('#findNode', () => {
@@ -118,8 +115,8 @@ sort: 1
         name: 'Hem',
         children: [
           { path: '/lotter', name: 'Lotter', children: [] },
-          { path: '/om-oss', name: 'Om oss', children: [] }
-        ]
+          { path: '/om-oss', name: 'Om oss', children: [] },
+        ],
       }
     })
     it('returns the correct node', () => {

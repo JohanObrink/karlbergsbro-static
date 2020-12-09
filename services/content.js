@@ -8,14 +8,14 @@ export const getPaths = memoize((dirs = []) => {
   const list = readdirSync(path, { withFileTypes: true })
 
   let paths = []
-  for (let dirent of list) {
+  list.forEach((dirent) => {
     if (dirent.isDirectory()) {
       paths = paths.concat(getPaths([...dirs, dirent.name]))
     } else {
       const filename = parse(dirent.name)
       const filepath = join(path, dirent.name)
-      
-      const {content, data} = read(filepath)
+
+      const { content, data } = read(filepath)
 
       const slugs = ['', ...dirs]
       if (filename.name !== 'index') {
@@ -24,10 +24,10 @@ export const getPaths = memoize((dirs = []) => {
       paths.push({
         path: slugs.join('/') || '/',
         content,
-        ...data
+        ...data,
       })
     }
-  }
+  })
 
   return paths
 })
@@ -35,72 +35,77 @@ export const getPaths = memoize((dirs = []) => {
 export const getPath = memoize((slugs = []) => {
   const paths = getPaths()
   const url = ['', ...slugs].join('/')
-  return paths.find(p => p.path === url || p.path === url + '/')
+  return paths.find((p) => p.path === url || p.path === `${url}/`)
 })
 
 export const getTree = memoize((path = '') => {
   const fullPath = join(process.cwd(), 'content', path)
   let result = {
     path: join('/', path),
-    children: []
+    children: [],
   }
-  const list = readdirSync(fullPath, {withFileTypes: true})
-  for (let dirent of list) {
+  const list = readdirSync(fullPath, { withFileTypes: true })
+  list.forEach((dirent) => {
     if (dirent.isDirectory()) {
       result.children.push(getTree(join(path, dirent.name)))
     } else {
       const filename = parse(dirent.name)
       const filepath = join(fullPath, dirent.name)
-      
-      const {content, data} = read(filepath)
+
+      const { content, data } = read(filepath)
 
       if (filename.name !== 'index') {
         result.children.push({
           ...data,
           path: join('/', path, filename.name),
-          content
+          content,
         })
       } else {
         result = {
           ...result,
           ...data,
-          content
+          content,
         }
       }
     }
-  }
+  })
   return result
 })
 
-export const getMenu = memoize((node) => {
-  if (!node) {
-    node = getTree()
-  }
-  return {
-    path: node.path,
-    sort: parseInt(node.sort, 10) || parseInt(node.path.match(/\d+/), 10) || node.path,
-    name: node.name,
-    thumbnail: node.thumbnail || null,
-    children: (node.children || [])
-      .map(child => getMenu(child))
-      .sort(({sort: s1}, {sort: s2}) => {
-        const isNum1 = typeof s1 === 'number'
-        const isNum2 = typeof s2 === 'number'
-        if (isNum1 && isNum2) return s1 - s2
-        if (isNum1 && !isNum2) return -1
-        if (!isNum2 && isNum1) return 1
-        return s1 < s2 ? -1 : 1
-      })
-  }
-})
+export const getMenu = memoize((node = getTree()) => ({
+  path: node.path,
+  sort:
+    parseInt(node.sort, 10) ||
+    parseInt(node.path.match(/\d+/), 10) ||
+    node.path,
+  name: node.name,
+  thumbnail: node.thumbnail || null,
+  children: (node.children || [])
+    .map((child) => getMenu(child))
+    .sort(({ sort: s1 }, { sort: s2 }) => {
+      const isNum1 = typeof s1 === 'number'
+      const isNum2 = typeof s2 === 'number'
+      if (isNum1 && isNum2) return s1 - s2
+      if (isNum1 && !isNum2) return -1
+      if (!isNum2 && isNum1) return 1
+      return s1 < s2 ? -1 : 1
+    }),
+}))
 
 export const findNode = memoize((node, path) => {
-  if (node.path === path) return node
-
-  for (let child of node.children || []) {
-    if (path.indexOf(child.path) === 0) {
-      const match = findNode(child, path)
-      if (match) return match
-    }
+  let result
+  if (node.path === path) {
+    result = node
+  } else {
+    ;(node.children || []).forEach((child) => {
+      if (path.indexOf(child.path) === 0) {
+        const match = findNode(child, path)
+        if (match) {
+          result = match
+        }
+      }
+    })
   }
+
+  return result
 })
