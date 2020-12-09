@@ -1,7 +1,11 @@
-export default function Footer (props) {
+import { Container } from "react-bootstrap";
+
+export default function Footer ({children}) {
   return (
-    <footer className="mt-auto text-black-50">
-      
+    <footer className="footer text-black-50">
+      <Container>
+        {children}
+      </Container>
     </footer>
   )
 }

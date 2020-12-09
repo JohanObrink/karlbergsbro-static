@@ -87,9 +87,19 @@
 
 }
 
-.instaFeed {
+.insta-feed {
   margin: 40px 0;
   clear: both;
+
+  h6 {
+    margin-top: 10px;
+  }
+  .text {
+    font-size: 0.8em;
+    height: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .card {
@@ -106,10 +116,11 @@
   }
   .card-image-text {
     position: absolute;
-    bottom: 5px;
-    left: 15px;
+    bottom: 8px;
+    left: 8px;
     padding: 5px;
     background: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
     color: #fff;
   }
   .card-title {
@@ -137,6 +148,11 @@
 
 form {
   margin-bottom: 50px;
+}
+
+.footer {
+  margin-top: 50px;
+  background-color: $gray-500;
 }
 
 @media (min-width: 600px) {

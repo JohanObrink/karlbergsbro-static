@@ -10,6 +10,7 @@ import AllotmentPage from '../components/AllotmentPage'
 import DefaultPage from '../components/DefaultPage'
 import StartPage from '../components/StartPage'
 import ProspectPage from '../components/ProspectPage'
+import Feed from '../components/instagram/Feed'
 
 const render = (menu, node, page) => {
   switch ((page.type || '').toLowerCase()) {
@@ -37,7 +38,11 @@ export default function Page ({menu, node, pageData}) {
       <main>
         {render(menu, node, pageData)}
       </main>
-      <Footer />
+      <Footer>
+        {pageData.instagram &&
+          <Feed username={pageData.instagram} />
+        }
+      </Footer>
     </div>
   )
 }

@@ -4,7 +4,7 @@ export function Card ({ image, title, text, imageText }) {
   return (
     <div className="card text-left">
       {image &&
-        <div className="imageWrap">
+        <div className="card-image-wrap">
           <Image src={image} className="card-image" rounded fluid />
           {imageText && <div className="card-image-text">{imageText}</div>}
         </div>
