@@ -6,37 +6,24 @@ export default function Feed ({ username }) {
   const { state, data } = useFeed(username)
 
   return (
-    <>
-      <style jsx>{`
-        h6 {
-          margin-top: 10px;
-        }
-        .text {
-          font-size: 0.8em;
-          height: 75px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-      `}</style>
-      <Container fluid className="instaFeed">
+    <Container fluid className="insta-feed">
         <Row>
         { state === 'loading' && <Col>Loading</Col> }
         { state === 'loaded' &&
           <>
-            <Col>
+            <Col lg={3} sm={6} xs={6}>
               <Image src={data.user.pic} fluid roundedCircle />
               <h6>@{data.user.username}</h6>
               <p className="text">{data.user.biography}</p>
             </Col>
             {data.timeline.slice(0, 3).map((post) => (
-              <Col>
-                <Post key={post.id} {...post} />
+              <Col lg={3} sm={6} xs={6} key={post.id}>
+                <Post {...post} />
               </Col>
             ))}
           </>
         }
         </Row>
       </Container>
-    </>
   )
 }

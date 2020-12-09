@@ -87,9 +87,19 @@
 
 }
 
-.instaFeed {
+.insta-feed {
   margin: 40px 0;
   clear: both;
+
+  h6 {
+    margin-top: 10px;
+  }
+  .text {
+    font-size: 0.8em;
+    height: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .card {
