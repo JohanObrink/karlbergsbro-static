@@ -1,6 +1,6 @@
 import { createTransport } from 'nodemailer'
 
-export async function sendMail({from, replyTo, to, subject, text}) {
+export async function sendMail({ from, replyTo, to, subject, text }) {
   const user = process.env.MAILER_USER
   const pass = process.env.MAILER_PWD
 
@@ -10,8 +10,14 @@ export async function sendMail({from, replyTo, to, subject, text}) {
     secure: true, // use TLS
     auth: {
       user,
-      pass
-    }
+      pass,
+    },
   })
-  return transport.sendMail({ from: `${from} <${user}>`, replyTo, to, subject, text })
+  return transport.sendMail({
+    from: `${from} <${user}>`,
+    replyTo,
+    to,
+    subject,
+    text,
+  })
 }

@@ -1,8 +1,7 @@
 import { sendMail } from './mailer'
 
-function compose (form) {
-  return (
-`Intresseanmälan
+function compose(form) {
+  return `Intresseanmälan
 ----------------
 ${form.name}
 ${form.address}
@@ -23,16 +22,15 @@ Motivering:
 ----------------
 ${form.motivation}
 `
-  )
 }
 
-export async function register (form) {
+export async function register(form) {
   const mail = {
     from: 'Karlbergs-Bro Intresseanmälan',
     subject: 'Intresseanmälan',
     to: process.env.MAILER_TO_PROSPECTS,
     replyTo: `${form.name} <${form.email}>`,
-    text: compose(form)
+    text: compose(form),
   }
   return await sendMail(mail)
 }

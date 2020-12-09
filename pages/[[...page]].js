@@ -1,6 +1,12 @@
 import React from 'react'
 import Head from 'next/head'
-import { getPath, getPaths, getTree, getMenu, findNode } from '../services/content'
+import {
+  getPath,
+  getPaths,
+  getTree,
+  getMenu,
+  findNode,
+} from '../services/content'
 
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
@@ -27,7 +33,7 @@ const render = (menu, node, page) => {
   }
 }
 
-export default function Page ({menu, node, pageData}) {
+export default function Page({ menu, node, pageData }) {
   return (
     <div className="d-flex w-100 h-100 mx-auto flex-column">
       <Head>
@@ -35,13 +41,9 @@ export default function Page ({menu, node, pageData}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Menu menu={menu.children} path={pageData.path} />
-      <main>
-        {render(menu, node, pageData)}
-      </main>
+      <main>{render(menu, node, pageData)}</main>
       <Footer>
-        {pageData.instagram &&
-          <Feed username={pageData.instagram} />
-        }
+        {pageData.instagram && <Feed username={pageData.instagram} />}
       </Footer>
     </div>
   )
@@ -52,12 +54,12 @@ export const getStaticProps = async (context) => {
   const menu = getMenu(getTree())
   const pageData = getPath(page)
   const node = findNode(menu, pageData.path)
-  return {props: {menu, pageData, node}}
+  return { props: { menu, pageData, node } }
 }
 
 export const getStaticPaths = async () => {
   const data = getPaths()
-  const paths = data.map(p => p.path)
+  const paths = data.map((p) => p.path)
   return {
     paths,
     fallback: false,

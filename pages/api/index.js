@@ -1,6 +1,6 @@
 import { getTree } from '../../services/content'
 
-export default function handler (req, res) {
+export default function handler(req, res) {
   try {
     switch (req.method) {
       case 'GET':
