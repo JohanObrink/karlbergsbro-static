@@ -32,5 +32,5 @@ export async function register(form) {
     replyTo: `${form.name} <${form.email}>`,
     text: compose(form),
   }
-  return await sendMail(mail)
+  return sendMail(mail)
 }

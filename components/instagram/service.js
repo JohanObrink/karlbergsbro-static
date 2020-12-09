@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 const INSTAGRAM = 'https://instagram.com'
 
-export function parse ({ graphql: { user } }) {
+export function parse({ graphql: { user } }) {
   const {
     biography,
     edge_followed_by: { count: followedBy },
@@ -10,9 +10,7 @@ export function parse ({ graphql: { user } }) {
     username,
     full_name: name,
     profile_pic_url_hd: pic,
-    edge_owner_to_timeline_media: {
-      edges: posts
-    },
+    edge_owner_to_timeline_media: { edges: posts },
   } = user
   const timeline = posts.map(({ node }) => ({
     id: node.id,
@@ -21,9 +19,9 @@ export function parse ({ graphql: { user } }) {
     href: `${INSTAGRAM}/p/${node.shortcode}`,
     media: [
       {
-        thumbnail: node.thumbnail_src
-      }
-    ]
+        thumbnail: node.thumbnail_src,
+      },
+    ],
   }))
   return {
     user: {
@@ -33,19 +31,19 @@ export function parse ({ graphql: { user } }) {
       following,
       name,
       username,
-      pic
+      pic,
     },
     timeline,
   }
 }
 
-export async function read (username) {
+export async function read(username) {
   const response = await fetch(`https://www.instagram.com/${username}/?__a=1`)
   const feed = await response.json()
   return feed
 }
 
-export function useFeed (username) {
+export function useFeed(username) {
   const [state, setState] = useState('idle')
   const [data, setData] = useState({})
 

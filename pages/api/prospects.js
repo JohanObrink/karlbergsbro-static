@@ -7,13 +7,19 @@ async function list() {
 export default async function handler(req, res) {
   try {
     switch (req.method) {
-      case 'GET':
-        return res.send(await list())
-      case 'POST':
+      case 'GET': {
+        res.send(await list())
+        break
+      }
+      case 'POST': {
         const result = await register(req.body)
-        return res.status(201).send(result)
-      default:
-        return res.status(405).end()
+        res.status(201).send(result)
+        break
+      }
+      default: {
+        res.status(405).end()
+        break
+      }
     }
   } catch (err) {
     res.status(500).send({ message: err.message })
