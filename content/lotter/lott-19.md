@@ -5,9 +5,9 @@ thumbnail: /lotter/lott19-thumbnail.jpg
 
 title: Lott 19
 ---
-# Lott 19
-
 ![Lott 19](/lotter/lott19.jpg#left)
+
+# Lott 19
 
 Här bor Familjen Ericsson som består av Bert och Ellika med sina tre söner Mikael, Daniel och Jonas. Med Daniel följer också sambon Lena och dottern Isa.
 

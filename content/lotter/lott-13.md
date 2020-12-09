@@ -5,9 +5,9 @@ thumbnail: /lotter/lott13-thumbnail.jpg
 
 title: Lott 13
 ---
-# Lott 13
-
 ![Lott 13](/lotter/lott13.jpg#left)
+
+# Lott 13
 
 Här bor Carin och Peter.
 

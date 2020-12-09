@@ -7,8 +7,8 @@ title: Lott H
 
 instagram: whatwouldmontydo
 ---
-# Lott H
-
 ![Lott H](/lotter/lotth.jpg#left)
 
-Här är Lottebo. 
+# Lott H
+
+Här är Lottebo.
