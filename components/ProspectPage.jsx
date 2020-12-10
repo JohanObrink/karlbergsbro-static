@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react"
-import { Alert, Button, Col, Container, Form, Row, Spinner } from "react-bootstrap"
-import Markdown from "./Markdown"
+import { useEffect, useState } from 'react'
+import {
+  Alert,
+  Button,
+  Col,
+  Container,
+  Form,
+  Row,
+  Spinner,
+} from 'react-bootstrap'
+import Markdown from './Markdown'
 
-export default function DefaultPage ({
-  content,
-  headline
-}) {
+export default function DefaultPage({ content, headline }) {
   const [validated, setValidated] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
@@ -24,7 +29,7 @@ export default function DefaultPage ({
       const response = await fetch('/api/prospects', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       })
       if (response.status >= 400) {
         const error = await response.json()
@@ -41,7 +46,7 @@ export default function DefaultPage ({
   }
 
   const handleSubmit = (event) => {
-    const form = event.currentTarget;
+    const form = event.currentTarget
     if (form.checkValidity() !== false) {
       submitForm()
     }
@@ -51,8 +56,8 @@ export default function DefaultPage ({
     setValidated(true)
   }
 
-  const handleChange = ({target}) => {
-    setData({ ...data, [target.name]: target.value})
+  const handleChange = ({ target }) => {
+    setData({ ...data, [target.name]: target.value })
     setError('')
   }
 
@@ -61,13 +66,13 @@ export default function DefaultPage ({
       <h1>{headline}</h1>
       <Markdown>{content}</Markdown>
       <hr />
-      <Form validated={validated} onSubmit={handleSubmit} onChange={handleChange}>
-        {submitted &&
-          <Alert variant="success">Tack för din ansökan!</Alert>
-        }
-        {error &&
-          <Alert variant="danger">Ett fel inträffade ({error})</Alert>
-        }
+      <Form
+        validated={validated}
+        onSubmit={handleSubmit}
+        onChange={handleChange}
+      >
+        {submitted && <Alert variant="success">Tack för din ansökan!</Alert>}
+        {error && <Alert variant="danger">Ett fel inträffade ({error})</Alert>}
         <Row>
           <Col lg={6} md={6} sm={12} xs={12}>
             <Form.Group>
@@ -76,7 +81,8 @@ export default function DefaultPage ({
                 disabled={disabled}
                 type="text"
                 name="name"
-                required />
+                required
+              />
             </Form.Group>
           </Col>
           <Col lg={6} md={6} sm={12} xs={12}>
@@ -86,7 +92,8 @@ export default function DefaultPage ({
                 disabled={disabled}
                 type="text"
                 name="year_of_birth"
-                required />
+                required
+              />
             </Form.Group>
           </Col>
           <Col lg={6} md={6} sm={12} xs={12}>
@@ -96,7 +103,8 @@ export default function DefaultPage ({
                 disabled={disabled}
                 type="text"
                 name="address"
-                required />
+                required
+              />
             </Form.Group>
           </Col>
           <Col lg={6} md={6} sm={12} xs={12}>
@@ -106,7 +114,8 @@ export default function DefaultPage ({
                 disabled={disabled}
                 type="text"
                 name="postal_address"
-                required />
+                required
+              />
             </Form.Group>
           </Col>
           <Col lg={6} md={6} sm={12} xs={12}>
@@ -116,7 +125,8 @@ export default function DefaultPage ({
                 disabled={disabled}
                 type="email"
                 name="email"
-                required />
+                required
+              />
             </Form.Group>
           </Col>
           <Col lg={6} md={6} sm={12} xs={12}>
@@ -126,7 +136,8 @@ export default function DefaultPage ({
                 disabled={disabled}
                 type="text"
                 name="phone"
-                required />
+                required
+              />
             </Form.Group>
           </Col>
           <Col lg={6} md={6} sm={12} xs={12}>
@@ -137,7 +148,8 @@ export default function DefaultPage ({
                 type="number"
                 name="number_of_kids"
                 defaultValue={0}
-                min={0} />
+                min={0}
+              />
             </Form.Group>
           </Col>
           <Col lg={6} md={6} sm={12} xs={12}>
@@ -146,7 +158,8 @@ export default function DefaultPage ({
               <Form.Control
                 disabled={disabled}
                 type="text"
-                name="kids_years_of_birth" />
+                name="kids_years_of_birth"
+              />
             </Form.Group>
           </Col>
           <Col lg={6} md={6} sm={12} xs={12}>
@@ -156,7 +169,8 @@ export default function DefaultPage ({
                 disabled={disabled}
                 type="text"
                 name="occupation"
-                required />
+                required
+              />
             </Form.Group>
           </Col>
           <Col lg={6} md={6} sm={12} xs={12}>
@@ -166,37 +180,41 @@ export default function DefaultPage ({
                 disabled={disabled}
                 type="text"
                 name="has_summer_home"
-                required />
+                required
+              />
             </Form.Group>
           </Col>
           <Col>
             <Form.Group>
-              <Form.Label>Motivering till varför Du vill ha en kolonilott</Form.Label>
+              <Form.Label>
+                Motivering till varför Du vill ha en kolonilott
+              </Form.Label>
               <Form.Control
                 disabled={disabled}
                 as="textarea"
                 rows={5}
                 name="motivation"
-                required />
+                required
+              />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col>
-            {error &&
+            {error && (
               <Alert variant="danger">Ett fel inträffade ({error})</Alert>
-            }
-            {submitted &&
+            )}
+            {submitted && (
               <Alert variant="success">Tack för din ansökan!</Alert>
-            }
-            {!submitted && 
-              (submitting
-                ? <Button disabled>
+            )}
+            {!submitted &&
+              (submitting ? (
+                <Button disabled>
                   <Spinner animation="border" variant="light" size="sm" />
                 </Button>
-                : <Button type="submit">Skicka</Button>
-              )
-            }
+              ) : (
+                <Button type="submit">Skicka</Button>
+              ))}
           </Col>
         </Row>
       </Form>

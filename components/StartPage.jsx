@@ -1,12 +1,8 @@
-import { Container } from "react-bootstrap"
-import Markdown from "./Markdown"
-import Masthead from "./Masthead"
+import { Container } from 'react-bootstrap'
+import Markdown from './Markdown'
+import Masthead from './Masthead'
 
-export default function StartPage ({
-  content,
-  image,
-  headline
-}) {
+export default function StartPage({ content, image, headline }) {
   return (
     <>
       <Masthead image={image}>

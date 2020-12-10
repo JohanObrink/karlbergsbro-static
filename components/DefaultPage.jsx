@@ -1,14 +1,14 @@
-import { Col, Container, Row } from "react-bootstrap"
-import Feed from "./instagram/Feed"
-import Markdown from "./Markdown"
-import Masthead from "./Masthead"
+import { Col, Container, Row } from 'react-bootstrap'
+import Feed from './instagram/Feed'
+import Markdown from './Markdown'
+import Masthead from './Masthead'
 
-export default function DefaultPage ({
+export default function DefaultPage({
   content,
   image,
   headline,
   subheader,
-  instagram
+  instagram,
 }) {
   return (
     <>
@@ -23,9 +23,7 @@ export default function DefaultPage ({
           </Col>
         </Row>
       </Container>
-      {instagram &&
-        <Feed username={instagram} />
-      }
+      {instagram && <Feed username={instagram} />}
     </>
   )
 }
