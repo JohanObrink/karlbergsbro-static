@@ -5,6 +5,7 @@ thumbnail: /lotter/lott4-thumbnail.jpg
 
 title: Lott 4
 ---
+
 ![Lott 4](/lotter/lott4.jpg#left)
 
 # Lott 4

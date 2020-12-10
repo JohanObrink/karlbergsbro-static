@@ -1,9 +1,7 @@
-import { Container } from "react-bootstrap"
-import Markdown from "./Markdown"
+import { Container } from 'react-bootstrap'
+import Markdown from './Markdown'
 
-export default function AllotmentPage ({
-  content
-}) {
+export default function AllotmentPage({ content }) {
   return (
     <>
       <Container>
