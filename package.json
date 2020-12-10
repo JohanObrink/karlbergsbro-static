@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint ./",
-    "format": "prettier --write \"{,!(node_modules|\\.next)/**/}*.{js,jsx,md,scss}\"",
+    "format": "prettier --write --ignore-path .gitignore ./",
     "test": "jest"
   },
   "dependencies": {
