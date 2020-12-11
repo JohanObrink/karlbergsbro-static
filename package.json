@@ -9,7 +9,7 @@
     "lint": "eslint ./",
     "format": "prettier --write --ignore-path .gitignore ./",
     "test": "jest",
-    "e2e": "start-server-and-test 'CYPRESS_DIST=.e2e yarn dev -p 4000' 4000 'CYPRESS_BASE_URL=http://localhost:4000 yarn cy:run'",
+    "e2e": "start-server-and-test 'CYPRESS_DIST=.e2e yarn dev -p 4000' 4000 'CYPRESS_BASE_URL=http://localhost:4000 yarn cy:run --config video=false'",
     "cy:open": "cypress open",
     "cy:run": "cypress run"
   },
