@@ -23,16 +23,6 @@ jobs:
   e2e:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js and run tests
-        uses: actions/setup-node@v2.1.2
-        with:
-          node-version: 14.x
-      - run: yarn install --immutable --silent --non-interactive 2> >(grep -v warning 1>&2)
-      - run: yarn e2e
-  cypress:
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout
         uses: actions/checkout@v2
 
