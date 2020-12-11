@@ -1,9 +1,9 @@
 {
-  "extends": "@imaginary-cloud/react",
+  "extends": ["@imaginary-cloud/react", "plugin:cypress/recommended"],
   "ignorePatterns": ["/*.js"],
   "parserOptions": {
-      "sourceType": "module",
-      "ecmaVersion": 2020
+    "sourceType": "module",
+    "ecmaVersion": 2020
   },
   "rules": {
     "react/react-in-jsx-scope": 0,
