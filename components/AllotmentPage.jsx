@@ -4,7 +4,7 @@ import Markdown from './Markdown'
 export default function AllotmentPage({ content }) {
   return (
     <>
-      <Container>
+      <Container className="mt-3">
         <Markdown>{content}</Markdown>
       </Container>
     </>
