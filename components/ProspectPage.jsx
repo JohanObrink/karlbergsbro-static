@@ -32,9 +32,8 @@ export default function DefaultPage({ content, headline }) {
         body: JSON.stringify(data),
       })
       if (response.status >= 400) {
-        const error = await response.json()
-        console.log(error)
-        throw error
+        const err = await response.json()
+        throw err
       }
       setSubmitted(true)
     } catch (err) {
@@ -62,7 +61,7 @@ export default function DefaultPage({ content, headline }) {
   }
 
   return (
-    <Container>
+    <Container className="mt-3">
       <h1>{headline}</h1>
       <Markdown>{content}</Markdown>
       <hr />

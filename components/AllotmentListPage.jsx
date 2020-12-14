@@ -6,7 +6,7 @@ import Markdown from './Markdown'
 export default function AllotmentListPage({ content, node }) {
   return (
     <>
-      <Container>
+      <Container className="mt-3">
         <Markdown>{content}</Markdown>
         <Row>
           {node.children.map((allotment) => (

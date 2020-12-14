@@ -1,4 +1,9 @@
-.nav-brand .nav-link {
+header {
+  height: 80px;
+}
+
+.navbar-brand .nav-link {
+  font-size: 2rem;
   padding: 0.25rem 0;
   font-weight: 200;
   color: rgba(0, 0, 0, 0.5);
@@ -6,13 +11,9 @@
   border-bottom: 0.25rem solid transparent;
 }
 
-.nav-brand .nav-link:hover,
-.nav-brand .nav-link:focus {
+.navbar-brand .nav-link:hover,
+.navbar-brand .nav-link:focus {
   border-bottom-color: rgba(0, 0, 0, 0.25);
-}
-
-.nav-brand .nav-link {
-  margin-left: 1rem;
 }
 
 .nav-masthead .nav-link {
@@ -32,7 +33,24 @@
   margin-left: 1rem;
 }
 
-.nav-masthead .active {
+.nav-masthead .active,
+.nav-masthead .active a,
+.dropdown-item .active {
   color: #000;
   border-bottom-color: #000;
+}
+
+.dropdown-menu {
+  max-height: calc(100vh - 200px);
+  overflow-y: scroll;
+}
+
+.dropdown-menu a.dropdown-item {
+  padding: 0.1rem 1.5rem;
+  background-color: transparent;
+  border-bottom: 0.25rem solid transparent;
+  &.active {
+    color: #000;
+    border-bottom-color: #000;
+  }
 }
