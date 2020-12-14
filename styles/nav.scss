@@ -40,6 +40,11 @@ header {
   border-bottom-color: #000;
 }
 
+.dropdown-menu {
+  max-height: calc(100vh - 200px);
+  overflow-y: scroll;
+}
+
 .dropdown-menu a.dropdown-item {
   padding: 0.1rem 1.5rem;
   background-color: transparent;
