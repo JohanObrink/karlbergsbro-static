@@ -14,6 +14,7 @@ export default function Feed({ username }) {
             <Col lg={3} sm={6} xs={6}>
               <a
                 href={`https://instagram.com/${data.user.username}`}
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 <Image src={data.user.pic} fluid roundedCircle />
