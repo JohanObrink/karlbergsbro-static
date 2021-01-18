@@ -1,4 +1,5 @@
 describe('smoke test', () => {
+  const specificallyTested = ['/intresse']
   describe('gui', () => {
     let content
     before(() =>
@@ -6,9 +7,11 @@ describe('smoke test', () => {
         content = response.body
       }),
     )
-    it('renders all pages', () => {
+    it('renders all (non-specifically tested) pages', () => {
       const traverse = (node) => {
-        cy.visit(node.path)
+        if (!specificallyTested.includes(node.path)) {
+          cy.visit(node.path)
+        }
         if (node.children) {
           node.children.forEach((child) => traverse(child))
         }

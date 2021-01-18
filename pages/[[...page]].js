@@ -16,6 +16,7 @@ import AllotmentPage from '../components/AllotmentPage'
 import DefaultPage from '../components/DefaultPage'
 import StartPage from '../components/StartPage'
 import ProspectPage from '../components/ProspectPage'
+import InfoPage from '../components/InfoPage'
 import Feed from '../components/instagram/Feed'
 
 const render = (menu, node, page) => {
@@ -24,6 +25,8 @@ const render = (menu, node, page) => {
       return <AllotmentListPage menu={menu} node={node} {...page} />
     case 'allotment':
       return <AllotmentPage menu={menu} node={node} {...page} />
+    case 'info':
+      return <InfoPage menu={menu} node={node} {...page} />
     case 'prospect':
       return <ProspectPage menu={menu} node={node} {...page} />
     case 'start':
