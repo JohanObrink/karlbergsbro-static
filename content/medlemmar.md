@@ -31,6 +31,8 @@ Följ gärna vår sida på Facebook [https://www.facebook.com/pg/karlbergsbro](h
 
 ---
 
+## Instruktioner
+
 ### Skapa konto hos Google
 
 Gå in på [https://accounts.google.com](https://accounts.google.com/signup/v2/webcreateaccount?service=wise&continue=http%3A%2F%2Fdrive.google.com%2F%3Futm_source%3Den&ltmpl=drive&dsh=S-16595101%3A1610988579938452&gmb=exp&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp)
