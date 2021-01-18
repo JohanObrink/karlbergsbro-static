@@ -1,14 +1,23 @@
+import { createElement } from 'react'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
+import Map from './Map'
 
-const myPlugin = function (...args) {
-  // console.log(...args)
-  // console.log(this)
+const mapRenderer = (node) => {
+  if (node.href.startsWith('https://google.com/maps')) {
+    console.log(node.children)
+    return <Map src={node.href} />
+  }
+  return createElement('a', node)
 }
 
 export default function Markdown({ children }) {
   return (
-    <ReactMarkdown plugins={[gfm, myPlugin]} className="text-left markdown">
+    <ReactMarkdown
+      renderers={{ link: mapRenderer }}
+      plugins={[gfm]}
+      className="text-left markdown"
+    >
       {children}
     </ReactMarkdown>
   )
