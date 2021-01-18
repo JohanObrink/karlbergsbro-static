@@ -6,6 +6,14 @@ title: För medlemmar
 
 # För medlemmar
 
+## Kontakt
+
+För allmän information, kontakta [info@karlbergsbro.se](mailto:info@karlbergsbro.se)
+
+Du kan kontakta styrelsen på [styrelsen@karlbergsbro.se](mailto:styrelsen@karlbergsbro.se)
+
+För frågor om sajten, tex. för att uppdatera din information om lotten eller lägga till en instagram-feed: [it@karlbergsbro.se](mailto:it@karlbergsbro.se)
+
 ## Dokument
 
 Dokument för föreningens medlemmar ligger på [Google Drive](https://drive.google.com/drive/folders/1IBlqYulIPX2LnlS6sPGxcx8tWgVsPb25).
@@ -23,7 +31,7 @@ Inbjudan till WhatsApp-gruppen har mejlats ut till alla medlemmar. Om du saknar 
 
 ## Instagram
 
-Föreningen har även en Instagramprofil under namnet [@karlbergsbro](https://instagram.com/karlbergsbro). Följ gärna kontot :) Om du vill vara med och bidra med bilder kan du kontakta [adela.vergara@gmail.com](mailto:adela.vergara@gmail.com) och be om tillträde.
+Föreningen har även en Instagramprofil under namnet [@karlbergsbro](https://instagram.com/karlbergsbro). Följ gärna kontot :) Om du vill vara med och bidra med bilder kan du kontakta [it@karlbergsbro.se](mailto:it@karlbergsbro.se) och be om tillträde.
 
 ## Facebook
 
@@ -45,4 +53,4 @@ Fyll i alla uppgifter och, om nödvändigt, verifiera din e-postadress.
 
 ### Bli tillagd i föreningens användarlista
 
-Skicka ett email från den adress du använder för att logga in på ditt Google-konto till [adela.vergara@gmail.com](mailto:adela.vergara@gmail.com) och be om tillträde.
+Skicka ett email från den adress du använder för att logga in på ditt Google-konto till [it@karlbergsbro.se](mailto:it@karlbergsbro.se) och be om tillträde.

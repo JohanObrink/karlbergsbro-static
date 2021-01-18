@@ -17,7 +17,7 @@ const linkRenderer = (props) => {
 const headingRenderer = (props) => {
   const text = props.node.children[0].value
   const linkId = normalizeUnicodeText(text.toLowerCase().replace(/ /g, '-'))
-  const link = createElement('a', { id: linkId })
+  const link = createElement('a', { id: linkId, key: linkId })
   return createElement(`h${props.level}`, null, [link, text])
 }
 
