@@ -7,7 +7,9 @@ const NavItem = ({ name, path, mainPath, children = [] }) => {
         <NavDropdown.Item href={path}>{name}</NavDropdown.Item>
         <NavDropdown.Divider />
         {children.map((child) => (
-          <NavDropdown.Item href={child.path}>{child.name}</NavDropdown.Item>
+          <NavDropdown.Item key={child.path} href={child.path}>
+            {child.name}
+          </NavDropdown.Item>
         ))}
       </NavDropdown>
     )
