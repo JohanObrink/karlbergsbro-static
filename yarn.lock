@@ -7227,6 +7227,11 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
+normalize-unicode-text@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/normalize-unicode-text/-/normalize-unicode-text-0.0.1.tgz#9ba7b8d265f7d2861460a44d283a033b5fcf5c72"
+  integrity sha512-zzW9hCazMohI1lf3zWF7k7ecCmL/T2ZaiV7W7ZIjmTmNT0bqNfnsgBfQnudYn8zG1uk7PrPmBXd2CkujehZpDw==
+
 npm-run-path@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
