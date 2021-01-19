@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import React from 'react'
 import Head from 'next/head'
 import {
@@ -18,6 +19,8 @@ import StartPage from '../components/StartPage'
 import ProspectPage from '../components/ProspectPage'
 import InfoPage from '../components/InfoPage'
 import Feed from '../components/instagram/Feed'
+
+import { GA_TRACKING_ID } from '../services/gtag'
 
 const render = (menu, node, page) => {
   switch ((page.type || '').toLowerCase()) {
@@ -42,6 +45,22 @@ export default function Page({ menu, node, pageData }) {
       <Head>
         <title>{pageData.title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_TRACKING_ID}', {
+            page_path: window.location.pathname,
+          });
+        `,
+          }}
+        />
       </Head>
       <Menu menu={menu.children} path={pageData.path} />
       <main>{render(menu, node, pageData)}</main>
