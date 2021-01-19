@@ -1,16 +1,16 @@
 ---
-name: Lott H
+name: Lott 27
 type: Allotment
-thumbnail: /lotter/lotth-thumbnail.jpg
+thumbnail: /lotter/lott27-thumbnail.jpg
 
-title: Lott H
+title: Lott 27
 
 instagram: whatwouldmontydo
 ---
 
-![Lott H](/lotter/lotth.jpg#left)
+![Lott 27](/lotter/lott27.jpg#left)
 
-# Lott H
+# Lott 27
 
 Välkomen till Lottebo! Den här lotten ägs sedan 2017 av Adela och Johan med barnen Caesar och Ava.
 
