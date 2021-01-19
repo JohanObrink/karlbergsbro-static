@@ -19,7 +19,6 @@
     "fast-memoize": "2.5.2",
     "gray-matter": "4.0.2",
     "next": "10.0.5",
-    "next-ga": "^2.3.4",
     "nodemailer": "6.4.17",
     "normalize-unicode-text": "^0.0.1",
     "react": "17.0.1",
