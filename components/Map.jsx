@@ -7,7 +7,7 @@ export default function Map({ src, title = 'Karta', ...props }) {
       height="100%"
       frameBorder="0"
       className="map"
-      src={`${src}&key=AIzaSyAOEBIF8HcauBazzRNHxZJ0OKz5bzfVAf8`}
+      src={`${src}&key=${process.env.GOOGLE_MAPS_KEY}`}
     />
   )
 }
