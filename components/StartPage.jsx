@@ -4,13 +4,15 @@ import Masthead from './Masthead'
 
 export default function StartPage({ content, image, headline }) {
   return (
-    <>
+    <div className="start-page">
       <Masthead image={image}>
-        <h1>{headline}</h1>
+        <div className="contrast-bg">
+          <h1>{headline}</h1>
+        </div>
       </Masthead>
       <Container>
         <Markdown>{content}</Markdown>
       </Container>
-    </>
+    </div>
   )
 }

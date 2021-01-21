@@ -38,3 +38,22 @@ form {
     font-size: 3.5rem;
   }
 }
+
+.contrast-bg {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 10px;
+  display: inline-block;
+  h1 {
+    display: table-caption;
+  }
+}
+
+@media (min-width: 500px) {
+  .contrast-bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 30px;
+    h1 {
+      display: inline-block;
+    }
+  }
+}
