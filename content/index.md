@@ -3,7 +3,7 @@ name: Hem
 type: Start
 
 title: Karlbergs-Bro Koloniförening
-image: /karlbergsbro_vinter.jpg
+image: /karlbergsbro_var.jpg
 headline: Karlbergs-Bro Koloniförening
 instagram: karlbergsbro
 ---
