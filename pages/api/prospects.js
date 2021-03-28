@@ -12,8 +12,8 @@ export default async function handler(req, res) {
         break
       }
       case 'POST': {
-        const result = await register(req.body)
-        res.status(201).send(result)
+        await register(req.body)
+        res.status(201).end()
         break
       }
       default: {
