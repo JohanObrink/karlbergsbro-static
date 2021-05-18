@@ -10,4 +10,4 @@ title: Lott 3
 
 # Lott 3
 
-Här bor Anita.
+Här håller Åsa och Mattias till med barnen Freja och Moa. Mormor Anita skrev kontrakt på lotten 1979 och sen dess har hela familjen kunnat njuta av trädgården. Barnens favoritodling är morötter och squash.

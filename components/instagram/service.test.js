@@ -15,16 +15,14 @@ describe('App - components/instagram/service', () => {
         name: 'whatwouldmontydo',
         username: 'whatwouldmontydo',
         href: 'https://instagram.com/whatwouldmontydo',
-        pic:
-          'https://scontent-arn2-1.cdninstagram.com/v/t51.2885-19/s320x320/23099224_1831428613834135_4844277081829277696_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_ohc=Jgy7_ik697kAX_UsWWG&oh=592bf0f40dd772a36f7c92ff064514ea&oe=5F9E144A',
+        pic: 'https://scontent-arn2-1.cdninstagram.com/v/t51.2885-19/s320x320/23099224_1831428613834135_4844277081829277696_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_ohc=Jgy7_ik697kAX_UsWWG&oh=592bf0f40dd772a36f7c92ff064514ea&oe=5F9E144A',
       })
     })
     it('parses timeline correctly', () => {
       expect(feed.timeline).toHaveLength(12)
       expect(feed.timeline[1]).toEqual({
         id: '2406284816638339785',
-        text:
-          'Kålen verkar må toppen just nu. Kronärtskockorna lika så. Tomaterna sjunger på sista versen men jag lyckades trots det plocka med mig 2,5 kg hem. Tror de ska bli ketchup. Sen. Inte idag, för den här veckan har känts tung. Nu behöver vi helg och lite vila. \n.\n.\n.\n#kolonilott #allotment #koloniträdgård #allotmentgarden #potager',
+        text: 'Kålen verkar må toppen just nu. Kronärtskockorna lika så. Tomaterna sjunger på sista versen men jag lyckades trots det plocka med mig 2,5 kg hem. Tror de ska bli ketchup. Sen. Inte idag, för den här veckan har känts tung. Nu behöver vi helg och lite vila. \n.\n.\n.\n#kolonilott #allotment #koloniträdgård #allotmentgarden #potager',
         likes: 40,
         href: 'https://instagram.com/p/CFk10qsJOrJ',
         media: [
