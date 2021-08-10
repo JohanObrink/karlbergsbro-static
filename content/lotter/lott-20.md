@@ -31,4 +31,4 @@ Vi har planterat det mesta i odlingslådor då vi har en törstig men ack så va
 
 På baksidan har vi också planterat, utöver odlingslådorna, ett plommonträd samt en fläderbuske och bärbuskar. Samt en vägg med klängrosor som en liten hyllning till svärmor som är från Gotland.
 
-Vi bor själva i lägenhet och andvänder lotten som vår trädgård där vi äter många middagar här på vår/somrarna/höst när vädret tillåter på veckodagar med även på helgerna såklart.
+Vi bor själva i lägenhet och använder lotten som vår trädgård där vi äter många middagar här på vår/somrarna/höst när vädret tillåter på veckodagar med även på helgerna såklart.
