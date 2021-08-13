@@ -18,7 +18,7 @@
     "bootstrap": "4.5.3",
     "fast-memoize": "2.5.2",
     "gray-matter": "4.0.3",
-    "next": "10.2.0",
+    "next": "11.1.0",
     "nodemailer": "6.6.0",
     "normalize-unicode-text": "^0.0.1",
     "react": "17.0.2",
