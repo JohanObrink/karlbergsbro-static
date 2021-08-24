@@ -1,5 +1,6 @@
 {
-  "extends": ["@imaginary-cloud/react", "plugin:cypress/recommended"],
+  "extends": ["plugin:cypress/recommended", "plugin:react/jsx-runtime"],
+  "parser": "@babel/eslint-parser",
   "ignorePatterns": ["/*.js"],
   "parserOptions": {
     "sourceType": "module",
