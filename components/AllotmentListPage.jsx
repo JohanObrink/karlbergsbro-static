@@ -12,7 +12,7 @@ export default function AllotmentListPage({ content, node }) {
           {node.children.map((allotment) => (
             <Col lg="3" md="4" sm="6" xs="12" key={allotment.path}>
               <Link href={allotment.path}>
-                <a>
+                <a href={allotment.path}>
                   <Card title={allotment.name} image={allotment.thumbnail} />
                 </a>
               </Link>
