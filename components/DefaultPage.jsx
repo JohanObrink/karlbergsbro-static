@@ -1,3 +1,4 @@
+import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import Feed from './instagram/Feed'
 import Markdown from './Markdown'
