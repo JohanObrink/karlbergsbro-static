@@ -20,7 +20,7 @@ module.exports = {
       '<rootDir>/__mocks__/fileMock.js',
   },
   setupFiles: ['<rootDir>/test.setup.js'],
-  setupFilesAfterEnv: ['<rootDir>/test.setupAfterEnv.js'],
+  setupFilesAfterEnv: [],
   testMatch: ['**/?(*.)+(spec|test).[jt]s?(x)'],
   testPathIgnorePatterns: [
     '/.next/',

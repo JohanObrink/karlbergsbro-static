@@ -5,7 +5,7 @@ describe('smoke test', () => {
     before(() =>
       cy.request('/api').then((response) => {
         content = response.body
-      }),
+      })
     )
     it('renders all (non-specifically tested) pages', () => {
       const traverse = (node) => {
