@@ -60,10 +60,12 @@ describe('services/mailer', () => {
             name: 'to',
           },
         ],
-        replyTo: {
-          address: 'foo@bar.se',
-          name: 'replyTo',
-        },
+        replyTo: [
+          {
+            address: 'foo@bar.se',
+            name: 'replyTo',
+          },
+        ],
         subject,
         text,
         headers: {},

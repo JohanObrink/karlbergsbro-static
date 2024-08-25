@@ -25,8 +25,8 @@ export default function Markdown({ children, className = '' }) {
   const classNames = `text-left markdown ${className}`
   return (
     <ReactMarkdown
-      renderers={{ link: linkRenderer, heading: headingRenderer }}
-      plugins={[gfm]}
+      components={{ link: linkRenderer, heading: headingRenderer }}
+      remarkPlugins={[gfm]}
       className={classNames}
     >
       {children}

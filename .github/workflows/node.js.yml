@@ -14,10 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node.js and run tests
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18.x
-      - run: yarn install --immutable --silent --non-interactive 2> >(grep -v warning 1>&2)
+      - run: corepack enable
+      - run: yarn install --immutable --silent 2> >(grep -v warning 1>&2)
       - run: yarn lint
       - run: yarn test
   e2e:
@@ -25,9 +26,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
+      - name: Setup Node.js and enable corepack
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+      - run: corepack enable
       - name: Cypress run
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           build: yarn build
           start: yarn start
