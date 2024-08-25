@@ -24,7 +24,7 @@ export default function DefaultPage({
           </Col>
         </Row>
       </Container>
-      {instagram && <Feed username={instagram} />}
+      {/* instagram && <Feed username={instagram} /> */}
     </>
   )
 }
