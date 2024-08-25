@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import Head from 'next/head'
 import {
   getPath,
@@ -40,6 +41,7 @@ const render = (menu, node, page) => {
 export default function Page({ menu, node, pageData }) {
   return (
     <div className="d-flex w-100 h-100 mx-auto flex-column">
+      <SpeedInsights />
       <Head>
         <title>{pageData.title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
