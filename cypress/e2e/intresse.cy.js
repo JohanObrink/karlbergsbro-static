@@ -1,4 +1,4 @@
-describe.skip('/intresse', () => {
+describe('/intresse', () => {
   beforeEach(() => cy.visit('/intresse'))
   it('renders', () => {})
   const fields = {

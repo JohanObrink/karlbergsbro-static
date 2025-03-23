@@ -13,7 +13,7 @@ name: Lotter
           'lott-1.md': '',
           'lott-10.md': '',
           'lott-2.md': '',
-          'lott-h.md': '',
+          'lott-27.md': '',
         },
         'index.md': `---
 title: titel
@@ -103,7 +103,7 @@ sort: 1
         '/lotter/lott-1',
         '/lotter/lott-2',
         '/lotter/lott-10',
-        '/lotter/lott-h',
+        '/lotter/lott-27',
       ])
     })
   })

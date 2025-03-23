@@ -8,7 +8,7 @@ export default function DefaultPage({ content, headline }) {
       <h1>{headline}</h1>
       <Markdown>{content}</Markdown>
       <hr />
-      {/* <ProspectForm /> */}
+      <ProspectForm />
     </Container>
   )
 }
