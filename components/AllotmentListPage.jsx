@@ -1,7 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import Link from 'next/link'
 import { Card } from './Card'
-import React from 'react'
 import Markdown from './Markdown'
 
 export default function AllotmentListPage({ content, node }) {

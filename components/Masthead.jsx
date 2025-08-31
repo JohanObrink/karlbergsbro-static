@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Masthead({ children, image }) {
   const style = image
     ? {
