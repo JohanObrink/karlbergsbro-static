@@ -1,16 +1,8 @@
-import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import Feed from './instagram/Feed'
 import Markdown from './Markdown'
 import Masthead from './Masthead'
 
-export default function DefaultPage({
-  content,
-  image,
-  headline,
-  subheader,
-  instagram,
-}) {
+export default function DefaultPage({ content, image, headline, subheader }) {
   return (
     <>
       <Masthead image={image}>

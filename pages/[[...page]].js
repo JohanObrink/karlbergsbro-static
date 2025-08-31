@@ -1,5 +1,6 @@
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Head from 'next/head'
+import Script from 'next/script'
 import {
   getPath,
   getPaths,
@@ -45,11 +46,11 @@ export default function Page({ menu, node, pageData }) {
       <Head>
         <title>{pageData.title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script
+        <Script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
         />
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
           window.dataLayer = window.dataLayer || [];
