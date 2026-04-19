@@ -20,7 +20,7 @@
     "fast-memoize": "2.5.2",
     "gray-matter": "4.0.3",
     "next": "16.2.4",
-    "nodemailer": "6.10.1",
+    "nodemailer": "8.0.5",
     "normalize-unicode-text": "0.0.1",
     "react": "19.2.5",
     "react-bootstrap": "2.10.10",

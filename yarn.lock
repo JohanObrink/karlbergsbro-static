@@ -8614,7 +8614,7 @@ __metadata:
     jest: "npm:30.3.0"
     mock-fs: "npm:5.5.0"
     next: "npm:16.2.4"
-    nodemailer: "npm:6.10.1"
+    nodemailer: "npm:8.0.5"
     normalize-unicode-text: "npm:0.0.1"
     prettier: "npm:3.8.3"
     react: "npm:19.2.5"
@@ -9760,10 +9760,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:6.10.1":
-  version: 6.10.1
-  resolution: "nodemailer@npm:6.10.1"
-  checksum: 10c0/e81fde258ea4f4e5646e9e3eebe89294d007939999d2d1a8c96c5488fa00bf659e46cf76fccb2697e9aa6ef9807a1ed47ff2aef6ad30b795e3849b6997066d16
+"nodemailer@npm:8.0.5":
+  version: 8.0.5
+  resolution: "nodemailer@npm:8.0.5"
+  checksum: 10c0/5e8450499bd059c56d74ba96fa5f9928de2ecdae0d53c083dba5661d797114c1f9524d30f992d0263cc5a7dcf5a54b9c1d92dc1f766da150c9d0bde7d3798431
   languageName: node
   linkType: hard
 
