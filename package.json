@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@vercel/speed-insights": "2.0.0",
-    "bootstrap": "4.6.2",
+    "bootstrap": "5.3.8",
     "fast-memoize": "2.5.2",
     "gray-matter": "4.0.3",
     "next": "16.2.4",

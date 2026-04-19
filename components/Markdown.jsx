@@ -34,7 +34,7 @@ const components = {
 
 export default function Markdown({ children, className = '' }) {
   return (
-    <div className={`text-left markdown ${className}`}>
+    <div className={`text-start markdown ${className}`}>
       <ReactMarkdown components={components} remarkPlugins={[gfm]}>
         {children}
       </ReactMarkdown>
