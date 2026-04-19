@@ -23,7 +23,7 @@ export default function Menu({ menu, path }) {
   return (
     <header>
       <Navbar className="bg-light" expand="md" fixed="top">
-        <Navbar.Brand className="float-md-left">
+        <Navbar.Brand className="float-md-start">
           <Nav.Link href="/">Karlbergs-Bro</Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js and run tests
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: 24.x
       - run: corepack enable
       - run: yarn install --immutable --silent 2> >(grep -v warning 1>&2)
       - run: yarn lint
@@ -29,7 +29,7 @@ jobs:
       - name: Setup Node.js and enable corepack
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: 24.x
       - run: corepack enable
       - name: Cypress run
         uses: cypress-io/github-action@v6
