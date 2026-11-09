@@ -13,11 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - run: corepack enable
       - uses: actions/setup-node@v7
         with:
           node-version-file: '.nvmrc'
           cache: 'yarn'
-      - run: corepack enable
       - run: yarn install --immutable --silent 2> >(grep -v warning 1>&2)
       - run: yarn lint
 
@@ -25,11 +25,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - run: corepack enable
       - uses: actions/setup-node@v7
         with:
           node-version-file: '.nvmrc'
           cache: 'yarn'
-      - run: corepack enable
       - run: yarn install --immutable --silent 2> >(grep -v warning 1>&2)
       - run: yarn test
 
@@ -37,11 +37,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - run: corepack enable
       - uses: actions/setup-node@v7
         with:
           node-version-file: '.nvmrc'
           cache: 'yarn'
-      - run: corepack enable
       - run: yarn install --immutable --silent 2> >(grep -v warning 1>&2)
       - name: Get Playwright version
         id: playwright-version
