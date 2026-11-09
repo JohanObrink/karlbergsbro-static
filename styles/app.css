@@ -1,12 +1,12 @@
-@import 'bootstrap/scss/bootstrap';
-@import './fonts.scss';
-@import './insta.scss';
-@import './markdown.scss';
-@import './masthead.scss';
-@import './nav.scss';
-@import './typo.scss';
-@import './info.scss';
-@import './map.scss';
+@import 'bootstrap/dist/css/bootstrap.css';
+@import './fonts.css';
+@import './insta.css';
+@import './markdown.css';
+@import './masthead.css';
+@import './nav.css';
+@import './typo.css';
+@import './info.css';
+@import './map.css';
 
 .btn-secondary,
 .btn-secondary:hover,
@@ -30,7 +30,7 @@ form {
 
 .footer {
   margin-top: 50px;
-  background-color: $gray-500;
+  background-color: var(--bs-gray-500);
 }
 
 @media (min-width: 768px) {
@@ -43,17 +43,19 @@ form {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 10px 10px;
   display: inline-block;
-  h1 {
-    display: table-caption;
-  }
+}
+
+.contrast-bg h1 {
+  display: table-caption;
 }
 
 @media (min-width: 500px) {
   .contrast-bg {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px 30px;
-    h1 {
-      display: inline-block;
-    }
+  }
+
+  .contrast-bg h1 {
+    display: inline-block;
   }
 }

@@ -1,4 +1,4 @@
-import '../styles/app.scss'
+import '../styles/app.css'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { pageview } from '../services/gtag'
