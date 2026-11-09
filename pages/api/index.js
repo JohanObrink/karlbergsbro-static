@@ -2,15 +2,10 @@ import { getTree } from '../../services/content'
 
 export default function handler(req, res) {
   try {
-    switch (req.method) {
-      case 'GET': {
-        res.send(getTree())
-        break
-      }
-      default: {
-        res.status(405)
-        break
-      }
+    if (req.method === 'GET') {
+      res.status(200).send(getTree())
+    } else {
+      res.status(405).send('Method Not Allowed')
     }
   } catch (err) {
     res.status(500).send(err.message)
