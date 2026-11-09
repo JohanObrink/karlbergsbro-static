@@ -1,6 +1,6 @@
 const config = {
   reactStrictMode: true,
-  distDir: process.env.CYPRESS_DIST || '.next',
+  distDir: process.env.E2E_DIST || '.next',
 }
 
 module.exports = config
