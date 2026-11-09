@@ -12,7 +12,9 @@ describe('/intresse', () => {
 // (remove .skip) once the page is unhidden again.
 describe.skip('/intresse (mail form, page currently hidden)', () => {
   beforeEach(() => cy.visit('/intresse'))
-  it('renders', () => {})
+  it('renders', () => {
+    // no assertions: just verifies the page loads without erroring
+  })
   const fields = {
     name: 'Rosa Ragnarsson',
     address: 'Hånger nygård',

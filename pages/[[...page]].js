@@ -1,24 +1,22 @@
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Head from 'next/head'
 import Script from 'next/script'
-import {
-  getPath,
-  getPaths,
-  getTree,
-  getMenu,
-  findNode,
-} from '../services/content'
-
-import Menu from '../components/Menu'
-import Footer from '../components/Footer'
-
 import AllotmentListPage from '../components/AllotmentListPage'
 import AllotmentPage from '../components/AllotmentPage'
 import DefaultPage from '../components/DefaultPage'
-import StartPage from '../components/StartPage'
-import ProspectPage from '../components/ProspectPage'
+import Footer from '../components/Footer'
 import InfoPage from '../components/InfoPage'
 import Feed from '../components/instagram/Feed'
+import Menu from '../components/Menu'
+import ProspectPage from '../components/ProspectPage'
+import StartPage from '../components/StartPage'
+import {
+  findNode,
+  getMenu,
+  getPath,
+  getPaths,
+  getTree,
+} from '../services/content'
 
 import { GA_TRACKING_ID } from '../services/gtag'
 
@@ -50,18 +48,16 @@ export default function Page({ menu, node, pageData }) {
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
         />
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `
+        <Script id="ga-init">
+          {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', '${GA_TRACKING_ID}', {
             page_path: window.location.pathname,
           });
-        `,
-          }}
-        />
+        `}
+        </Script>
       </Head>
       <Menu menu={menu.children} path={pageData.path} />
       <main>{render(menu, node, pageData)}</main>

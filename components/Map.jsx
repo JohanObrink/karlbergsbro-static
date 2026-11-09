@@ -1,4 +1,4 @@
-export default function Map({ src, title = 'Karta', ...props }) {
+export default function MapEmbed({ src, title = 'Karta', ...props }) {
   return (
     <iframe
       {...props}
