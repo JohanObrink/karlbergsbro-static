@@ -22,7 +22,6 @@
     "gray-matter": "4.0.3",
     "next": "16.4.5",
     "nodemailer": "10.4.0",
-    "normalize-unicode-text": "0.0.1",
     "react": "19.3.1",
     "react-bootstrap": "2.10.10",
     "react-dom": "19.3.1",
