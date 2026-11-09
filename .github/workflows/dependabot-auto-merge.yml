@@ -1,0 +1,32 @@
+# Automatically enables GitHub's native auto-merge for Dependabot pull
+# requests that bump a dependency by patch or minor version. Major version
+# bumps are left for manual review since they can carry breaking changes
+# that tests may not catch.
+#
+# Auto-merge only actually merges once the required status checks
+# (lint, test, e2e from the Test workflow) pass - see the branch
+# protection rule on `main`.
+name: Dependabot auto-merge
+
+on: pull_request
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'JohanObrink/karlbergsbro-static'
+    steps:
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v3
+        with:
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+      - name: Enable auto-merge for patch/minor updates
+        if: steps.metadata.outputs.update-type == 'version-update:semver-patch' || steps.metadata.outputs.update-type == 'version-update:semver-minor'
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -9,29 +9,49 @@ on:
     branches: [main]
 
 jobs:
-  unit:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: Setup Node.js and run tests
-        uses: actions/setup-node@v7
+      - run: corepack enable
+      - uses: actions/setup-node@v7
         with:
           node-version-file: '.nvmrc'
-      - run: corepack enable
+          cache: 'yarn'
       - run: yarn install --immutable --silent 2> >(grep -v warning 1>&2)
       - run: yarn lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: corepack enable
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+      - run: yarn install --immutable --silent 2> >(grep -v warning 1>&2)
       - run: yarn test
+
   e2e:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-      - name: Setup Node.js and enable corepack
-        uses: actions/setup-node@v7
+      - uses: actions/checkout@v7
+      - run: corepack enable
+      - uses: actions/setup-node@v7
         with:
           node-version-file: '.nvmrc'
-      - run: corepack enable
+          cache: 'yarn'
       - run: yarn install --immutable --silent 2> >(grep -v warning 1>&2)
+      - name: Get Playwright version
+        id: playwright-version
+        run: echo "version=$(node -p "require('./package.json').devDependencies['@playwright/test']")" >> "$GITHUB_OUTPUT"
+      - name: Cache Playwright browsers
+        uses: actions/cache@v5
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
       - run: npx playwright install --with-deps chromium
       - run: yarn e2e
       - name: Upload Playwright report
