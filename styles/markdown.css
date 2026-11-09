@@ -1,5 +1,5 @@
 .markdown {
-  // small
+  /* small */
   img {
     width: 100%;
     margin: 0;
@@ -14,7 +14,7 @@
     margin: 10px 0;
   }
 
-  // medium
+  /* medium */
   @media (min-width: 660px) {
     img {
       max-width: calc(100% - 80px);
@@ -33,7 +33,7 @@
     }
   }
 
-  // large
+  /* large */
   @media (min-width: 1000px) {
     img {
       max-width: calc(100% - 80px);

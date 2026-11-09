@@ -1,4 +1,16 @@
 describe('/intresse', () => {
+  it('is not reachable (hidden with _ prefix)', () => {
+    cy.request({ url: '/intresse', failOnStatusCode: false }).then(
+      (response) => {
+        expect(response.status).to.equal(404)
+      },
+    )
+  })
+})
+
+// Page is temporarily hidden (content/_intresse.md). Re-enable this suite
+// (remove .skip) once the page is unhidden again.
+describe.skip('/intresse (mail form, page currently hidden)', () => {
   beforeEach(() => cy.visit('/intresse'))
   it('renders', () => {})
   const fields = {

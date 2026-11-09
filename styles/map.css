@@ -3,7 +3,7 @@
   height: 250px;
 }
 
-// medium
+/* medium */
 @media (min-width: 660px) {
   .map {
     width: 100%;
@@ -11,7 +11,7 @@
   }
 }
 
-// large
+/* large */
 @media (min-width: 1000px) {
   .map {
     width: 100%;
