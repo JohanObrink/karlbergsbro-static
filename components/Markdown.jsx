@@ -1,12 +1,12 @@
+import { normalizeUnicodeText } from 'normalize-unicode-text'
 import { createElement } from 'react'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
-import { normalizeUnicodeText } from 'normalize-unicode-text'
-import Map from './Map'
+import MapEmbed from './Map'
 
 const linkRenderer = ({ href, children, ...props }) => {
   if (href.startsWith('https://google.com/maps')) {
-    return <Map src={href} />
+    return <MapEmbed src={href} />
   }
   if (href.startsWith('http')) {
     return createElement('a', { ...props, href, target: '_blank' }, children)
@@ -14,22 +14,22 @@ const linkRenderer = ({ href, children, ...props }) => {
   return createElement('a', { ...props, href }, children)
 }
 
-const makeHeadingRenderer = (level) =>
-  function HeadingRenderer({ node }) {
-    const text = node.children[0].value
-    const linkId = normalizeUnicodeText(text.toLowerCase().replace(/ /g, '-'))
-    const anchor = createElement('a', { id: linkId, key: linkId })
-    return createElement(`h${level}`, null, [anchor, text])
-  }
+function HeadingRenderer({ node }) {
+  const level = Number(node.tagName.slice(1))
+  const text = node.children[0].value
+  const linkId = normalizeUnicodeText(text.toLowerCase().replace(/ /g, '-'))
+  const anchor = createElement('a', { id: linkId, key: linkId })
+  return createElement(`h${level}`, null, [anchor, text])
+}
 
 const components = {
   a: linkRenderer,
-  h1: makeHeadingRenderer(1),
-  h2: makeHeadingRenderer(2),
-  h3: makeHeadingRenderer(3),
-  h4: makeHeadingRenderer(4),
-  h5: makeHeadingRenderer(5),
-  h6: makeHeadingRenderer(6),
+  h1: HeadingRenderer,
+  h2: HeadingRenderer,
+  h3: HeadingRenderer,
+  h4: HeadingRenderer,
+  h5: HeadingRenderer,
+  h6: HeadingRenderer,
 }
 
 export default function Markdown({ children, className = '' }) {

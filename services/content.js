@@ -1,7 +1,7 @@
-import { readdirSync } from 'fs'
-import { join, parse } from 'path'
-import { read } from 'gray-matter'
 import memoize from 'fast-memoize'
+import { readdirSync } from 'fs'
+import { read } from 'gray-matter'
+import { join, parse } from 'path'
 
 const isHidden = (name) => name.startsWith('_')
 

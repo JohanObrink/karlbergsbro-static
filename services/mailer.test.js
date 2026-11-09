@@ -1,10 +1,9 @@
 import { createTransport } from 'nodemailer'
+import { vi } from 'vitest'
 import { sendMail } from './mailer'
 
-const nodemailer = jest.requireActual('nodemailer')
-
-jest.mock('nodemailer', () => ({
-  createTransport: jest.fn().mockName('createTransport'),
+vi.mock('nodemailer', () => ({
+  createTransport: vi.fn(),
 }))
 
 describe('services/mailer', () => {
@@ -15,7 +14,7 @@ describe('services/mailer', () => {
       process.env.MAILER_PWD = 'pwd'
 
       transport = {
-        sendMail: jest.fn().mockName('sendMail').mockResolvedValue(),
+        sendMail: vi.fn().mockResolvedValue(),
       }
       createTransport.mockReturnValue(transport)
     })
@@ -42,6 +41,7 @@ describe('services/mailer', () => {
       const to = 'to <bar@foo.se>'
       const subject = 'subject'
       const text = 'text'
+      const nodemailer = await vi.importActual('nodemailer')
       const jsonTransport = nodemailer.createTransport({
         jsonTransport: true,
       })

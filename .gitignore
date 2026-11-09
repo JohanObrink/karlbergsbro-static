@@ -13,6 +13,12 @@
 /out/
 /.e2e/
 
+# playwright
+/playwright-report/
+/test-results/
+/blob-report/
+/playwright/.cache/
+
 # production
 /build
 

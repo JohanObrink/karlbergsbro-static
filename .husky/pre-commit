@@ -1,2 +1,1 @@
-
-npx pretty-quick --staged
+npx biome check --write --staged

@@ -1,7 +1,8 @@
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'fs'
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'fs'
 import { tmpdir } from 'os'
 import { join } from 'path'
-import { getPaths, getTree, getMenu, findNode } from './content'
+import { vi } from 'vitest'
+import { findNode, getMenu, getPaths, getTree } from './content'
 
 describe('services/content', () => {
   let tmpRoot
@@ -9,7 +10,7 @@ describe('services/content', () => {
 
   beforeAll(() => {
     tmpRoot = mkdtempSync(join(tmpdir(), 'karlbergsbro-content-'))
-    cwdSpy = jest.spyOn(process, 'cwd').mockReturnValue(tmpRoot)
+    cwdSpy = vi.spyOn(process, 'cwd').mockReturnValue(tmpRoot)
 
     const contentRoot = join(tmpRoot, 'content')
     const lotterRoot = join(contentRoot, 'lotter')

@@ -1,6 +1,6 @@
 import '../styles/app.css'
-import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 import { pageview } from '../services/gtag'
 
 function MyApp({ Component, pageProps }) {
