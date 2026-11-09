@@ -1,33 +1,56 @@
-import mockFs from 'mock-fs'
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'fs'
+import { tmpdir } from 'os'
+import { join } from 'path'
 import { getPaths, getTree, getMenu, findNode } from './content'
 
 describe('services/content', () => {
-  beforeEach(() => {
-    const root = `${process.cwd()}/content`
-    mockFs({
-      [root]: {
-        lotter: {
-          'index.md': `---
+  let tmpRoot
+  let cwdSpy
+
+  beforeAll(() => {
+    tmpRoot = mkdtempSync(join(tmpdir(), 'karlbergsbro-content-'))
+    cwdSpy = jest.spyOn(process, 'cwd').mockReturnValue(tmpRoot)
+
+    const contentRoot = join(tmpRoot, 'content')
+    const lotterRoot = join(contentRoot, 'lotter')
+    mkdirSync(lotterRoot, { recursive: true })
+
+    writeFileSync(
+      join(lotterRoot, 'index.md'),
+      `---
 name: Lotter
 ---`,
-          'lott-1.md': '',
-          'lott-10.md': '',
-          'lott-2.md': '',
-          'lott-27.md': '',
-        },
-        'index.md': `---
+    )
+    writeFileSync(join(lotterRoot, 'lott-1.md'), '')
+    writeFileSync(join(lotterRoot, 'lott-10.md'), '')
+    writeFileSync(join(lotterRoot, 'lott-2.md'), '')
+    writeFileSync(join(lotterRoot, 'lott-27.md'), '')
+
+    writeFileSync(
+      join(contentRoot, 'index.md'),
+      `---
 title: titel
 name: Hem
 ---
 # markdown`,
-        'intresse.md': '',
-        'om-oss': `---
+    )
+    writeFileSync(join(contentRoot, 'intresse.md'), '')
+    writeFileSync(
+      join(contentRoot, 'om-oss'),
+      `---
 sort: 1
 ---`,
-      },
-    })
+    )
+
+    writeFileSync(join(contentRoot, '_hidden.md'), '')
+    const hiddenDir = join(contentRoot, '_hidden-dir')
+    mkdirSync(hiddenDir, { recursive: true })
+    writeFileSync(join(hiddenDir, 'index.md'), '')
   })
-  afterEach(() => mockFs.restore())
+  afterAll(() => {
+    cwdSpy.mockRestore()
+    rmSync(tmpRoot, { recursive: true, force: true })
+  })
   describe('#getPaths', () => {
     it('loads index', () => {
       const paths = getPaths()
@@ -50,6 +73,11 @@ sort: 1
       expect(paths[0].title).toEqual('titel')
       expect(paths[0].content).toEqual('# markdown')
     })
+    it('excludes files and directories prefixed with _', () => {
+      const paths = getPaths()
+      expect(paths.map((p) => p.path)).not.toContain('/_hidden')
+      expect(paths.map((p) => p.path)).not.toContain('/_hidden-dir')
+    })
   })
   describe('#getTree', () => {
     it('returns one top element', () => {
@@ -65,6 +93,11 @@ sort: 1
     it('parses children', () => {
       const tree = getTree()
       expect(tree.children).toHaveLength(3)
+    })
+    it('excludes children prefixed with _', () => {
+      const tree = getTree()
+      expect(tree.children.map((c) => c.path)).not.toContain('/_hidden-dir')
+      expect(tree.children.map((c) => c.path)).not.toContain('/_hidden')
     })
   })
   describe('#getMenu', () => {

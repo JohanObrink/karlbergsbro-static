@@ -3,9 +3,13 @@ import { join, parse } from 'path'
 import { read } from 'gray-matter'
 import memoize from 'fast-memoize'
 
+const isHidden = (name) => name.startsWith('_')
+
 export const getPaths = memoize((dirs = []) => {
   const path = join(process.cwd(), 'content', dirs.join('/'))
-  const list = readdirSync(path, { withFileTypes: true })
+  const list = readdirSync(path, { withFileTypes: true }).filter(
+    (dirent) => !isHidden(dirent.name),
+  )
 
   let paths = []
   list.forEach((dirent) => {
@@ -44,7 +48,9 @@ export const getTree = memoize((path = '') => {
     path: join('/', path),
     children: [],
   }
-  const list = readdirSync(fullPath, { withFileTypes: true })
+  const list = readdirSync(fullPath, { withFileTypes: true }).filter(
+    (dirent) => !isHidden(dirent.name),
+  )
   list.forEach((dirent) => {
     if (dirent.isDirectory()) {
       result.children.push(getTree(join(path, dirent.name)))
@@ -57,7 +63,7 @@ export const getTree = memoize((path = '') => {
       if (filename.name !== 'index') {
         result.children.push({
           ...data,
-          path: join('/', path, filename.name),
+          path: join(/* turbopackIgnore: true */ '/', path, filename.name),
           content,
         })
       } else {
