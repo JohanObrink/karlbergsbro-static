@@ -29,6 +29,15 @@ module.exports = {
     '/coverage/',
   ],
   transform: {
-    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.jsx?$': [
+      '@swc/jest',
+      {
+        jsc: {
+          transform: {
+            react: { runtime: 'automatic' },
+          },
+        },
+      },
+    ],
   },
 }
