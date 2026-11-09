@@ -1129,6 +1129,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"czg@npm:1.14.0":
+  version: 1.14.0
+  resolution: "czg@npm:1.14.0"
+  bin:
+    czg: bin/index.js
+    git-czg: bin/index.js
+  checksum: 10c0/1630af2ae36850e22cfc5e2fcdc738a31f0aecc909a40190d7e37cbd32f3f08f3c58e20cd891a9ded91f450e17ed43a8f9873a22cc3eca8a89d81aeca5529fef
+  languageName: node
+  linkType: hard
+
 "debug@npm:^4.0.0":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
@@ -1295,16 +1305,6 @@ __metadata:
   dependencies:
     node-gyp: "npm:latest"
   conditions: os=darwin
-  languageName: node
-  linkType: hard
-
-"git-cz@npm:4.9.0":
-  version: 4.9.0
-  resolution: "git-cz@npm:4.9.0"
-  bin:
-    git-cz: bin/git-cz.js
-    gitcz: bin/git-cz.js
-  checksum: 10c0/c925f9fb2367e16d0f2df1beef1efd38e6823b978690e0c097fec49ca2704774e0e095272354d73060311a71591708367024767d928cdd7c9f08d228acc516dc
   languageName: node
   linkType: hard
 
@@ -1480,8 +1480,8 @@ __metadata:
     "@vercel/speed-insights": "npm:2.1.0"
     "@vitest/coverage-v8": "npm:5.1.0"
     bootstrap: "npm:5.3.8"
+    czg: "npm:1.14.0"
     fast-memoize: "npm:2.5.2"
-    git-cz: "npm:4.9.0"
     gray-matter: "npm:4.0.3"
     husky: "npm:9.1.7"
     next: "npm:16.4.5"

@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "e2e": "playwright test",
     "e2e:ui": "playwright test --ui",
-    "prepare": "husky install",
+    "commit": "czg",
+    "prepare": "husky",
     "smoketest": "yarn lint && yarn build && yarn test && yarn e2e"
   },
   "dependencies": {
@@ -35,18 +36,13 @@
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
     "@vitest/coverage-v8": "5.1.0",
-    "git-cz": "4.9.0",
+    "czg": "1.14.0",
     "husky": "9.1.7",
     "vite": "8.3.7",
     "vitest": "5.1.0"
   },
   "engines": {
     "node": ">=26"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/git-cz"
-    }
   },
   "packageManager": "yarn@4.18.1+sha512.b2e1e7524f654f2749d32b4ebcb4622473cb5bcbc485df2007e12a154e50162a4d795526768bc5f5b8f81717bfd79deb2472813d86fb5ae2eb551fa9c872b08f"
 }
