@@ -1,7 +1,7 @@
-import { normalizeUnicodeText } from 'normalize-unicode-text'
 import { createElement } from 'react'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
+import { normalizeUnicodeText } from '../services/normalizeUnicodeText'
 import MapEmbed from './Map'
 
 const linkRenderer = ({ href, children, ...props }) => {
