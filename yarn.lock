@@ -1486,7 +1486,6 @@ __metadata:
     husky: "npm:9.1.7"
     next: "npm:16.4.5"
     nodemailer: "npm:10.4.0"
-    normalize-unicode-text: "npm:0.0.1"
     react: "npm:19.3.1"
     react-bootstrap: "npm:2.10.10"
     react-dom: "npm:19.3.1"
@@ -2335,13 +2334,6 @@ __metadata:
   bin:
     nopt: bin/nopt.js
   checksum: 10c0/980d89257f9587f3e1f77877ddbf905d6aa3b738ec33e49a4fa1a059a0dd82eb28063982b150654a7ae9de386f2ead60e56172db7d37cf56de545f7392a2a26a
-  languageName: node
-  linkType: hard
-
-"normalize-unicode-text@npm:0.0.1":
-  version: 0.0.1
-  resolution: "normalize-unicode-text@npm:0.0.1"
-  checksum: 10c0/9b42db69b6240a69977a6cd2392b5f771e95a77de988cc51012f580d226f58f67789213e6fc6991ce21d8b681ffdaca40f5c983ddf793996277a3016b6137188
   languageName: node
   linkType: hard
 
